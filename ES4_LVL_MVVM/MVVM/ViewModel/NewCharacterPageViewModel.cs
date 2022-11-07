@@ -1,4 +1,5 @@
-﻿using ES4_LVL_MVVM.Contracts.Services;
+﻿//using AndroidX.Annotations;
+using ES4_LVL_MVVM.Contracts.Services;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -10,12 +11,34 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
     {
         readonly INavigationService _navigationService;
 
+        private string _name;
 
-        private string _txt;
-        public string txt 
-        { 
-            get => _txt;
-            set => _txt = value;
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (value != _name)
+                {
+                    _name = value;
+                    RaisePropertyChanged(property: nameof(Name));
+                }
+            }
+        }
+
+        private string _input;
+
+        public string Input
+        {
+            get => _input;
+            set
+            {
+                if (value != _input)
+                {
+                    _input = value;
+                    RaisePropertyChanged(property: nameof(Input));
+                }
+            }
         }
 
 
@@ -27,18 +50,16 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             //_dataService = dataService;
             _navigationService = navigationService;
             txtCommand = new Command(() => txtFunction());
-            txtTest = new Command(() => txtTestCommand());
+            Name = "Hello  World";
+            Input = "";
+
         }
 
-        private string txtTestCommand()
-        {
-            return "Hello world";
-        }
 
 
         private void txtFunction()
         {
-            txt = "testing";
+            Name = "Hello" + Input;
         }
 
     }

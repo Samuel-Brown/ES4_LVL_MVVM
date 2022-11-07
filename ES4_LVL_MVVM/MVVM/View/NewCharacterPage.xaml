@@ -9,11 +9,11 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Editor
-            Text="{Binding txt}"
+            Text="{Binding Input}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Label 
-            Text="{Binding txtTest}"
+            Text="{Binding Name}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button
