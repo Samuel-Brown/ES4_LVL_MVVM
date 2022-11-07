@@ -1,9 +1,12 @@
+using ES4_LVL_MVVM.MVVM.ViewModels;
+
 namespace ES4_LVL_MVVM.MVVM.View;
 
 public partial class NewCharacterPage : ContentPage
 {
-	public NewCharacterPage()
+	public NewCharacterPage(NewCharacterPageViewModel viewModel)
 	{
-		InitializeComponent();
+        //BindingContext = viewModel;
+        InitializeComponent();
 	}
 }
