@@ -9,11 +9,16 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Editor
-            Text="fh"
+            Text="{Binding txt}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Label 
-            Text="gfh"
+            Text="{Binding txtTest}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button
+            Text="Submit"
+            Command="{Binding txtCommand}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>

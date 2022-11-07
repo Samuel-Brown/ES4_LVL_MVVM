@@ -29,6 +29,9 @@ namespace ES4_LVL_MVVM.Services
         public NavigationService(IServiceProvider services)
             => _services = services;
 
+
+        //-----------------------------------------------------NavigateTo Commands------------------
+
         public Task NavigateToMainPage()
             => NavigateToPage<MainPage>();
 
