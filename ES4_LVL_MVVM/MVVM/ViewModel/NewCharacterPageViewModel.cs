@@ -4,6 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using ES4_lvl_Flogic;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -12,6 +13,21 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         readonly INavigationService _navigationService;
 
         private string _name;
+
+        private string[] _classList;
+
+        public string[] ClassList
+        {
+            get => _classList;
+            set
+            {
+                if (value != _classList)
+                {
+                    _classList = value;
+                    RaisePropertyChanged(property: nameof(ClassList));
+                }
+            }
+        }
 
         public string Name
         {
@@ -44,6 +60,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         public ICommand txtCommand { get; set; }
         public ICommand txtTest { get; set; }
+        public ICommand listClassesCommand { get; set; }
 
         public NewCharacterPageViewModel(INavigationService navigationService)
         {
@@ -52,8 +69,12 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             txtCommand = new Command(() => txtFunction());
             Name = "Hello  World";
             Input = "";
+            ClassList = Classes.List_Classes;
 
         }
+
+
+
 
 
 

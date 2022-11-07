@@ -21,5 +21,29 @@
             Command="{Binding txtCommand}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Picker
+            ItemsSource="{Binding ClassList}"
+            ></Picker>
+
+
+
+        <Frame BorderColor="Red" CornerRadius="10">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Frame wrapped around a Label" />
+                <Entry Text="Hi boi"></Entry>
+            </StackLayout>
+        </Frame>
+
+
+
+
+
+
+
+
+
+
+
     </VerticalStackLayout>
 </ContentPage>
