@@ -5,5 +5,10 @@
         Task NavigateBack();
         Task NavigateToMainPage();
         Task NavigateToNewCharacterPage();
+        Task NavigateToCharacterPage();
+        Task NavigateToAttributesPage();
+        Task NavigateToSkillsPage();
+        Task NavigateToLevelUpPage();
+        Task NavigateToShellPage();
     }
 }

@@ -38,6 +38,20 @@ namespace ES4_LVL_MVVM.Services
         public Task NavigateToNewCharacterPage()
             => NavigateToPage<NewCharacterPage>();
 
+        public Task NavigateToCharacterPage()
+            => NavigateToPage<CharacterPage>();
+
+        public Task NavigateToAttributesPage()
+            => NavigateToPage<AttributesPage>();
+
+        public Task NavigateToSkillsPage()
+            => NavigateToPage<SkillsPage>();
+
+        public Task NavigateToLevelUpPage()
+            => NavigateToPage<LevelUpPage>();
+        public Task NavigateToShellPage()
+    => NavigateToPage<ShellPage>();
+
 
         public Task NavigateBack()
         {

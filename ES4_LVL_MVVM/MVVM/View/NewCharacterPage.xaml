@@ -9,7 +9,7 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Editor
-            Text="{Binding Input}"
+            Text="{Binding character.StandardClass}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Label 
@@ -24,7 +24,11 @@
 
         <Picker
             ItemsSource="{Binding ClassList}"
-            ></Picker>
+            SelectedItem="{Binding Input}"
+            >
+            
+            
+        </Picker>
 
 
 

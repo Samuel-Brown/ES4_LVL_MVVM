@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ES4_LVL_MVVM.MVVM.View"
+       x:Class="ES4_LVL_MVVM.MVVM.View.ShellPage">
+    <TabBar >
+        <Tab Title="Character"
+            Icon="appicon.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:CharacterPage}" />
+        </Tab>
+        <Tab Title="Attributes"
+            Icon="appicon.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:AttributesPage}" />
+        </Tab>
+        <Tab Title="Skills"
+            Icon="appicon.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:SkillsPage}" />
+        </Tab>
+        <Tab Title="Level Up"
+            Icon="appicon.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:LevelUpPage}" />
+        </Tab>
+    </TabBar>
+</Shell>    
+    
+    
+    
+    
+<!--<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:ES4_LVL_MVVM.MVVM.View"
+            x:Class="ES4_LVL_MVVM.MVVM.View.CharacterPage"   
+            Title="CharacterPage">
+    <NavigationPage Title="Attributes" IconImageSource="appicon.svg">
+        <x:Arguments>
+            <local:AttributesPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="LevelUpPage" IconImageSource="schedule.png">
+        <x:Arguments>
+            <local:LevelUpPage />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>-->   
+    
+
+
+
+
+
+
+   
+    
+<!--<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ES4_LVL_MVVM.MVVM.View.CharacterPage"
+             Title="CharacterPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>-->
+
+
+<!--<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:Xaminals.Views"
+       x:Class="Xaminals.AppShell">
+    <TabBar>
+        <Tab Title="Cats"
+            Icon="cat.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CatsPage}" />
+        </Tab>
+        <Tab Title="Dogs"
+            Icon="dog.png">
+            <ShellContent ContentTemplate="{DataTemplate views:DogsPage}" />
+        </Tab>
+    </TabBar>
+</Shell>-->

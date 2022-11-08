@@ -35,6 +35,20 @@
                 Command="{Binding NavigateCommand}"
                 HorizontalOptions="Center" />
 
+            <Button 
+                Text="Character"
+                FontAttributes="Bold"
+                Grid.Row="3"
+                Command="{Binding NavigateToCharacterPageCommand}"
+                HorizontalOptions="Center" />
+
+            <Button 
+                Text="Shell"
+                FontAttributes="Bold"
+                Grid.Row="3"
+                Command="{Binding NavigateToShellPageCommand}"
+                HorizontalOptions="Center" />
+
         </VerticalStackLayout>
     </ScrollView>
 

@@ -14,6 +14,26 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         private string _name;
 
+        private Character _character;
+
+        public Character character
+        {
+            get => _character;
+            set
+            {
+                if (value != _character)
+                {
+                    _character = value;
+                    RaisePropertyChanged(property: nameof(Character));
+                }
+            }
+        }
+
+
+
+
+
+
         private string[] _classList;
 
         public string[] ClassList
@@ -70,6 +90,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             Name = "Hello  World";
             Input = "";
             ClassList = Classes.List_Classes;
+            character = Characters.New_Character("Male", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat);
 
         }
 

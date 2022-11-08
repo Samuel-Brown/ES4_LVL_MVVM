@@ -10,6 +10,13 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         public Command NavigateCommand
             => new Command(async () => await _navigationService.NavigateToNewCharacterPage());
 
+
+        public Command NavigateToCharacterPageCommand
+            => new Command(async () => await _navigationService.NavigateToCharacterPage());
+
+        public Command NavigateToShellPageCommand
+            => new Command(async () => await _navigationService.NavigateToShellPage());
+
         public MainPageViewModel(IDataService dataService, INavigationService navigationService)
         {
             _dataService = dataService;
