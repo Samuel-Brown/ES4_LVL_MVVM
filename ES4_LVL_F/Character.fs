@@ -121,13 +121,21 @@ type Character =
 
 
     Base_Strength       : int
+    Strength            : int
     Base_Intelligence   : int
+    Intelligence        : int
     Base_Willpower      : int
+    Willpower           : int
     Base_Agility        : int
+    Agility             : int
     Base_Speed          : int
+    Speed               : int
     Base_Endurance      : int
+    Endurance           : int
     Base_Personality    : int
+    Personality         : int
     Base_Luck           : int
+    Luck                : int
 
     OverallLevel        : int
 
@@ -138,6 +146,46 @@ type Character =
     module Characters =
         let positive_to_bool (i) = 
             if (i > 0) then true else false
+
+
+        let Current_Attribute_Level (levels: Level[], attribute : Attribute) : int =
+            let mutable temp = 0
+            for i in levels do  temp <- temp + i.Strength_Add;
+            let Strength           = temp
+            temp <- 0
+            for i in levels do  temp <- temp + i.Intelligence_Add;
+            let Intelligence           = temp
+            temp <- 0
+            for i in levels do  temp <- temp + i.Willpower_Add;
+            let Willpower           = temp
+            temp <- 0
+            for i in levels do  temp <- temp + i.Agility_Add;
+            let Agility           = temp
+            temp <- 0
+            for i in levels do  temp <- temp + i.Speed_Add;
+            let Speed           = temp
+            temp <- 0
+            for i in levels do  temp <- temp + i.Endurance_Add;
+            let Endurance           = temp
+            temp <- 0
+            for i in levels do  temp <- temp + i.Personality_Add;
+            let Personality           = temp
+            temp <- 0
+            for i in levels do  temp <- temp + i.Luck_Add;
+            let Luck           = temp
+            temp <- 0
+            match attribute with 
+                | Attribute.Strength        -> Strength 
+                | Attribute.Intelligence    -> Intelligence 
+                | Attribute.Willpower       -> Willpower 
+                | Attribute.Agility         -> Agility 
+                | Attribute.Speed           -> Speed 
+                | Attribute.Endurance       -> Endurance 
+                | Attribute.Personality     -> Personality 
+                | Attribute.Luck            -> Luck 
+                | _                         -> 0
+
+
 
         let Current_Skill_Level (levels: Level[], skill : Skill) : int = 
             let mutable temp = 0
@@ -225,7 +273,7 @@ type Character =
                 | Skill.Alteration        -> Alteration
                 | Skill.Destruction       -> Destruction
                 | Skill.Restoration       -> Restoration
-                | _                       -> Restoration
+                | _                       -> 0
 
 
         let New_Character (name, race, gender, specialisation, birthsign, standardClass, levels: Level[]) = 
@@ -328,13 +376,21 @@ type Character =
                 Speechcraft_Is_Major = positive_to_bool(Class_Major_Skill_Bonus(standardClass)[20])
 
                 Base_Strength       = Race_Starting_Attributes(race,gender)[0] + Birthsign_Attribute_Bonus(birthsign)[0] + Class_Attribute_Bonus(standardClass)[0]
+                Strength       = Race_Starting_Attributes(race,gender)[0] + Birthsign_Attribute_Bonus(birthsign)[0] + Class_Attribute_Bonus(standardClass)[0] + Current_Attribute_Level(levels, Attribute.Strength)
                 Base_Intelligence   = Race_Starting_Attributes(race,gender)[1] + Birthsign_Attribute_Bonus(birthsign)[1] + Class_Attribute_Bonus(standardClass)[1]
+                Intelligence   = Race_Starting_Attributes(race,gender)[1] + Birthsign_Attribute_Bonus(birthsign)[1] + Class_Attribute_Bonus(standardClass)[1] + Current_Attribute_Level(levels, Attribute.Intelligence)
                 Base_Willpower      = Race_Starting_Attributes(race,gender)[2] + Birthsign_Attribute_Bonus(birthsign)[2] + Class_Attribute_Bonus(standardClass)[2]
+                Willpower      = Race_Starting_Attributes(race,gender)[2] + Birthsign_Attribute_Bonus(birthsign)[2] + Class_Attribute_Bonus(standardClass)[2] + Current_Attribute_Level(levels, Attribute.Willpower)
                 Base_Agility        = Race_Starting_Attributes(race,gender)[3] + Birthsign_Attribute_Bonus(birthsign)[3] + Class_Attribute_Bonus(standardClass)[3]
+                Agility        = Race_Starting_Attributes(race,gender)[3] + Birthsign_Attribute_Bonus(birthsign)[3] + Class_Attribute_Bonus(standardClass)[3] + Current_Attribute_Level(levels, Attribute.Agility)
                 Base_Speed          = Race_Starting_Attributes(race,gender)[4] + Birthsign_Attribute_Bonus(birthsign)[4] + Class_Attribute_Bonus(standardClass)[4]
+                Speed          = Race_Starting_Attributes(race,gender)[4] + Birthsign_Attribute_Bonus(birthsign)[4] + Class_Attribute_Bonus(standardClass)[4] + Current_Attribute_Level(levels, Attribute.Speed)
                 Base_Endurance      = Race_Starting_Attributes(race,gender)[5] + Birthsign_Attribute_Bonus(birthsign)[5] + Class_Attribute_Bonus(standardClass)[5] 
+                Endurance      = Race_Starting_Attributes(race,gender)[5] + Birthsign_Attribute_Bonus(birthsign)[5] + Class_Attribute_Bonus(standardClass)[5] + Current_Attribute_Level(levels, Attribute.Endurance)
                 Base_Personality    = Race_Starting_Attributes(race,gender)[6] + Birthsign_Attribute_Bonus(birthsign)[6] + Class_Attribute_Bonus(standardClass)[6]
+                Personality    = Race_Starting_Attributes(race,gender)[6] + Birthsign_Attribute_Bonus(birthsign)[6] + Class_Attribute_Bonus(standardClass)[6] + Current_Attribute_Level(levels, Attribute.Personality)
                 Base_Luck           = Race_Starting_Attributes(race,gender)[7] + Birthsign_Attribute_Bonus(birthsign)[7] + Class_Attribute_Bonus(standardClass)[7]
+                Luck           = Race_Starting_Attributes(race,gender)[7] + Birthsign_Attribute_Bonus(birthsign)[7] + Class_Attribute_Bonus(standardClass)[7] + Current_Attribute_Level(levels, Attribute.Luck)
 
                 OverallLevel        = 0
 
