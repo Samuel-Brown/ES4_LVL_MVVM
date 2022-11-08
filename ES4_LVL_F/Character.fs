@@ -392,7 +392,7 @@ type Character =
                 Base_Luck           = Race_Starting_Attributes(race,gender)[7] + Birthsign_Attribute_Bonus(birthsign)[7] + Class_Attribute_Bonus(standardClass)[7]
                 Luck           = Race_Starting_Attributes(race,gender)[7] + Birthsign_Attribute_Bonus(birthsign)[7] + Class_Attribute_Bonus(standardClass)[7] + Current_Attribute_Level(levels, Attribute.Luck)
 
-                OverallLevel        = 0
+                OverallLevel        = levels.Length
 
       
             }

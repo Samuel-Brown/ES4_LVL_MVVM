@@ -41,4 +41,32 @@
     <Color x:Key="Blue200Accent">#72ACF1</Color>
     <Color x:Key="Blue300Accent">#A7CBF6</Color>
 
+
+
+    <Color x:Key="Paper">#f7eedd</Color>
+    <Color x:Key="Wood">#9e764c</Color>
+    <Color x:Key="Pencil">#6a361e</Color>
+    <Color x:Key="Pen">#3c4b68</Color>
+    <Color x:Key="Brass">#e7d2a7</Color>
+    <Color x:Key="HardPencil">#47350d</Color>
+    <Color x:Key="Selected">#8f0808</Color>
+    <SolidColorBrush x:Key="PaperBrush" Color="{StaticResource Paper}"/>
+    <SolidColorBrush x:Key="WoodBrush" Color="{StaticResource Wood}"/>
+    <SolidColorBrush x:Key="PencilBrush" Color="{StaticResource Pencil}"/>
+    <SolidColorBrush x:Key="PenBrush" Color="{StaticResource Pen}"/>
+    <SolidColorBrush x:Key="BrassBrush" Color="{StaticResource Brass}"/>
+    <SolidColorBrush x:Key="HardPencilBrush" Color="{StaticResource HardPencil}"/>
+    <SolidColorBrush x:Key="SelectedBrush" Color="{StaticResource Selected}"/>
+
+
+
+
+
+
+
+
+
+
+
+
 </ResourceDictionary>

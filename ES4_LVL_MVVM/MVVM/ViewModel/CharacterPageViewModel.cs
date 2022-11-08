@@ -13,7 +13,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         private Character _character;
 
-        public Character character
+        public Character Character
         {
             get => _character;
             set
@@ -36,7 +36,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             {
                 if (value != _placeholder)
                 {
-                    Placeholder = value;
+                    _placeholder = value;
                     RaisePropertyChanged(property: nameof(Character));
                 }
             }
@@ -49,7 +49,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             _navigationService = navigationService;
             Level TestLevel1 = ES4_LVL_F.Levels.New_Level(0, 5, 4, 0, 4, 0, 0, 10, 0, 1, 4, 0, 1, 0, 5, 0, 0, 0, 3, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0);
             Level[] TestLevels = new Level[] { TestLevel1 };
-            character = Characters.New_Character("Frederick", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat, TestLevels);
+            Character = Characters.New_Character("Frederick", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat, TestLevels);
         }
 
 

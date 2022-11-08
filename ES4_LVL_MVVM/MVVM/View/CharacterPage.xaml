@@ -3,13 +3,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ES4_LVL_MVVM.MVVM.View.CharacterPage">
     <VerticalStackLayout Margin="5">
-        <Frame BorderColor="Red" CornerRadius="10">
+        <Label Text="{Binding Character.Name}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+        <Frame>
             <StackLayout Orientation="Horizontal">
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Strength" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding character.Base_Strength}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                <Label Text="Race" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.Race}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
             </StackLayout>
         </Frame>
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
+                <Label Text="Birthsign" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.Birthsign}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
+                <Label Text="Class" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.ClassName}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
+                <Label Text="Level" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.OverallLevel}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+        
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Health" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <ProgressBar Progress="100" ProgressColor="Red" MinimumWidthRequest="100" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  ></ProgressBar>
+                <Label Text="100" VerticalOptions="Center" Margin="20,0,20,0"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Magica" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <ProgressBar Progress="100" ProgressColor="Blue" MinimumWidthRequest="100" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  ></ProgressBar>
+                <Label Text="100" VerticalOptions="Center" Margin="20,0,20,0"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Stamina" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <ProgressBar Progress="100" ProgressColor="Green" MinimumWidthRequest="100" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  ></ProgressBar>
+                <Label Text="100" VerticalOptions="Center" Margin="20,0,20,0"/>
+            </StackLayout>
+        </Frame>
+
     </VerticalStackLayout>
 
 
