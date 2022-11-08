@@ -32,32 +32,11 @@ type Level =
     Endurance_Add      : int
     Personality_Add    : int
     Luck_Add           : int
-
-
     }
 
 module Levels =
-    let List_Skills = 
+    let List_Levels = 
         [| 
-        "Blade"; 
-        "Blunt"; 
-        "Hand to Hand"; 
-        "Armorer"; 
-        "Block"; 
-        "Heavy Armor"; 
-        "Athletics"; 
-        "Acrobatics"; 
-        "Light Armor"; 
-        "Security"; 
-        "Sneak"; 
-        "Marksman";  
-        "Mercantile";  
-        "Speechcraft";  
-        "Illusion";  
-        "Alchemy";  
-        "Conjuration";  
-        "Mysticism";  
-        "Alteration";  
-        "Destruction";  
-        "Restoration"
+        "Male"; 
+        "Female"
         |]

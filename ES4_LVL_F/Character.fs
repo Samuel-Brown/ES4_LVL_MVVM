@@ -3,6 +3,7 @@
 open ES4_LVL_F.Races
 open ES4_LVL_F.Birthsigns
 open ES4_LVL_F.Classes
+open ES4_LVL_F.Levels
 
 type Character =
     { 
