@@ -34,9 +34,6 @@ type Level =
     Luck_Add           : int
 
 
-
-
-
     }
 
 module Levels =
