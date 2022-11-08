@@ -47,7 +47,9 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         {
             //_dataService = dataService;
             _navigationService = navigationService;
-            character = Characters.New_Character("Frederick", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat);
+            Level TestLevel1 = ES4_LVL_F.Levels.New_Level(0, 5, 4, 0, 4, 0, 0, 10, 0, 1, 4, 0, 1, 0, 5, 0, 0, 0, 3, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0);
+            Level[] TestLevels = new Level[] { TestLevel1 };
+            character = Characters.New_Character("Frederick", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat, TestLevels);
         }
 
 

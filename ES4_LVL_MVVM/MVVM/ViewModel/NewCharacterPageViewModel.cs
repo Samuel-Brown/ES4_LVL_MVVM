@@ -90,7 +90,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             Name = "Hello  World";
             Input = "";
             ClassList = Classes.List_Classes;
-            character = Characters.New_Character("Male", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat);
+            //character = Characters.New_Character("Male", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat);
 
         }
 
