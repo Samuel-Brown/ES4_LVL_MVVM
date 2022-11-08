@@ -49,11 +49,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <None Remove="Resources\Images\strength.gif" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\ES4_lvl\ES4_lvl_Flogic\ES4_lvl_Flogic.fsproj" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -80,6 +80,11 @@
 	<ItemGroup>
 	  <Folder Include="MVVM\Model\" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ES4_LVL_F\ES4_LVL_F.fsproj" />
+	</ItemGroup>
+
 
 	<ItemGroup>
 	  <Compile Update="MVVM\View\ShellPage.xaml.cs">

@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using ES4_lvl_Flogic;
+using ES4_LVL_F;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {

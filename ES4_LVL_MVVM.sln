@@ -5,9 +5,7 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ES4_LVL_MVVM", "ES4_LVL_MVVM\ES4_LVL_MVVM.csproj", "{A58F2FD0-0FBE-41B3-83CD-6E1006B842F6}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ES4_lvl_Flogic", "..\ES4_lvl\ES4_lvl_Flogic\ES4_lvl_Flogic.fsproj", "{8E8108ED-5D92-4D1E-B86E-BB77B1A537EC}"
-EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ES4_lvl_Flogic_Tests", "..\ES4_lvl\ES4_lvl_Flogic_Tests\ES4_lvl_Flogic_Tests.fsproj", "{42339D57-5358-4A78-A937-B3E41B56371F}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ES4_LVL_F", "ES4_LVL_F\ES4_LVL_F.fsproj", "{163944FC-CB02-493E-8BDA-6BDB45702EB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +19,10 @@ Global
 		{A58F2FD0-0FBE-41B3-83CD-6E1006B842F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A58F2FD0-0FBE-41B3-83CD-6E1006B842F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A58F2FD0-0FBE-41B3-83CD-6E1006B842F6}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{8E8108ED-5D92-4D1E-B86E-BB77B1A537EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E8108ED-5D92-4D1E-B86E-BB77B1A537EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E8108ED-5D92-4D1E-B86E-BB77B1A537EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E8108ED-5D92-4D1E-B86E-BB77B1A537EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42339D57-5358-4A78-A937-B3E41B56371F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42339D57-5358-4A78-A937-B3E41B56371F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42339D57-5358-4A78-A937-B3E41B56371F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42339D57-5358-4A78-A937-B3E41B56371F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{163944FC-CB02-493E-8BDA-6BDB45702EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{163944FC-CB02-493E-8BDA-6BDB45702EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{163944FC-CB02-493E-8BDA-6BDB45702EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{163944FC-CB02-493E-8BDA-6BDB45702EB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
