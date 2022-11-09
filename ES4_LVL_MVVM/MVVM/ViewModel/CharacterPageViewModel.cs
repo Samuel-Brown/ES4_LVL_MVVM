@@ -10,6 +10,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
     public class CharacterPageViewModel : ViewModelBase
     {
         readonly INavigationService _navigationService;
+        readonly IDataService _dataService;
 
         private Character _character;
 
@@ -43,13 +44,32 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         }
 
 
-        public CharacterPageViewModel(INavigationService navigationService)
+        public CharacterPageViewModel(IDataService dataService, INavigationService navigationService)
         {
-            //_dataService = dataService;
+            _dataService = dataService;
             _navigationService = navigationService;
-            Level TestLevel1 = ES4_LVL_F.Levels.New_Level(0, 5, 4, 0, 4, 0, 0, 10, 0, 1, 4, 0, 1, 0, 5, 0, 0, 0, 3, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0);
-            Level[] TestLevels = new Level[] { TestLevel1 };
-            Character = Characters.New_Character("Frederick", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat, TestLevels);
+            Character = _dataService.GetCharacters()[0];
+        }
+
+
+
+        public override Task OnNavigatedFrom(bool isForwardNavigation)
+        {
+            Console.WriteLine($"On {(isForwardNavigation ? "forward" : "backward")} navigated from Character");
+            return base.OnNavigatedFrom(isForwardNavigation);
+        }
+
+        public override Task OnNavigatingTo(object parameter)
+        {
+            Console.WriteLine($"On navigating to Character with parameter {parameter}");
+            Character = (Character)parameter;
+            return base.OnNavigatingTo(parameter);
+        }
+
+        public override Task OnNavigatedTo()
+        {
+            Console.WriteLine("On navigated to Character");
+            return base.OnNavigatedTo();
         }
 
 

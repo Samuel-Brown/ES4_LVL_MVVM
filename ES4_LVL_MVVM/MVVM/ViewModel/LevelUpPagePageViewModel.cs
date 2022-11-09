@@ -11,7 +11,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
     public class LevelUpPageViewModel : ViewModelBase
     {
         readonly INavigationService _navigationService;
-
+        readonly IDataService _dataService;
 
         private Character _character;
 
@@ -130,23 +130,42 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
 
 
-        public LevelUpPageViewModel(INavigationService navigationService)
+        public LevelUpPageViewModel(INavigationService navigationService, IDataService dataService)
         {
-            //_dataService = dataService;
+            _dataService = dataService;
             _navigationService = navigationService;
-            Level TestLevel1 = ES4_LVL_F.Levels.New_Level(0, 5, 4, 0, 4, 0, 0, 10, 0, 1, 4, 0, 1, 0, 5, 0, 0, 0, 3, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0);
-            Level[] TestLevels = new Level[] { TestLevel1 };
-            Character = Characters.New_Character("Frederick", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat, TestLevels);
+            Character = _dataService.GetCharacters()[0];
 
-            StrengthIncrease = Levels.Strength_Increases(TestLevels[TestLevels.Length-1]);
-            IntelligenceIncrease = Levels.Intelligence_Increases(TestLevels[TestLevels.Length - 1]);
-            WillpowerIncrease = Levels.Willpower_Increases(TestLevels[TestLevels.Length - 1]);
-            AgilityIncrease = Levels.Agility_Increases(TestLevels[TestLevels.Length - 1]);
-            EnduranceIncrease = Levels.Endurance_Increases(TestLevels[TestLevels.Length - 1]);
-            PersonalityIncrease = Levels.Personality_Increases(TestLevels[TestLevels.Length - 1]);
-            LuckIncrease = Levels.Luck_Increases(TestLevels[TestLevels.Length - 1]);
+            StrengthIncrease =      Levels.Strength_Increases(Character.CharacterLevels[Character.CharacterLevels.Length-1]);
+            IntelligenceIncrease =  Levels.Intelligence_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            WillpowerIncrease =     Levels.Willpower_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            AgilityIncrease =       Levels.Agility_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            EnduranceIncrease =     Levels.Endurance_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            PersonalityIncrease =   Levels.Personality_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            LuckIncrease =          Levels.Luck_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
 
         }
+
+        public override Task OnNavigatedFrom(bool isForwardNavigation)
+        {
+            Console.WriteLine($"On {(isForwardNavigation ? "forward" : "backward")} navigated from Character");
+            return base.OnNavigatedFrom(isForwardNavigation);
+        }
+
+        public override Task OnNavigatingTo(object parameter)
+        {
+            Console.WriteLine($"On navigating to Character with parameter {parameter}");
+            Character = (Character)parameter;
+            return base.OnNavigatingTo(parameter);
+        }
+
+        public override Task OnNavigatedTo()
+        {
+            Console.WriteLine("On navigated to Character");
+            return base.OnNavigatedTo();
+        }
+
+
 
 
     }

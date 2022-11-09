@@ -6,47 +6,30 @@
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+            Padding="30"
+            VerticalOptions="Start">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer 
+                                            Command="{Binding NavigateToShellPageCommand}"
+                                            CommandParameter="{Binding MyCharacters[0]}"/>
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="strength.gif" HeightRequest="50" Margin="0" />
+                    <Label Text="{Binding MyCharacters[0].Name}" VerticalOptions="Center" Margin="20,0,0,0"/>
+                    <Label Text="{Binding MyCharacters[0].ClassName}" VerticalOptions="Center" Margin="20,0,0,0"/>
+                    <Label Text="{Binding MyCharacters[0].Race}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
 
             <Button 
-                Text="Navigate"
+                Text="New Character"
+                IsEnabled="False"
                 FontAttributes="Bold"
                 Grid.Row="3"
-                Command="{Binding NavigateCommand}"
-                HorizontalOptions="Center" />
-
-            <Button 
-                Text="Character"
-                FontAttributes="Bold"
-                Grid.Row="3"
-                Command="{Binding NavigateToCharacterPageCommand}"
-                HorizontalOptions="Center" />
-
-            <Button 
-                Text="Shell"
-                FontAttributes="Bold"
-                Grid.Row="3"
-                Command="{Binding NavigateToShellPageCommand}"
+                Command="{Binding NavigateToNewCharacterPageCommand}"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>

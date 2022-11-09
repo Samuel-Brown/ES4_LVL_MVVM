@@ -11,6 +11,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
     public class NewCharacterPageViewModel : ViewModelBase
     {
         readonly INavigationService _navigationService;
+        readonly IDataService _dataService;
 
         private string _name;
 
@@ -62,7 +63,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         public ICommand txtTest { get; set; }
         public ICommand listClassesCommand { get; set; }
 
-        public NewCharacterPageViewModel(INavigationService navigationService)
+        public NewCharacterPageViewModel(INavigationService navigationService, IDataService dataService)
         {
             //_dataService = dataService;
             _navigationService = navigationService;
