@@ -2,63 +2,46 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ES4_LVL_MVVM.MVVM.View.SkillsPage">
-    <VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
         <Label Text="Attributes" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+
+        <!--<CollectionView ItemsSource="{Binding Character}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Label Text="{Binding Armorer}" FontAttributes="Bold" />
+                        <Label Grid.Column="1" Text="{Binding CharacterLevels}" />
+                        <Label Grid.Column="2" Text="{Binding Armorer_Is_Major}" HorizontalTextAlignment="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+
         <Frame>
             <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Strength" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Strength}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                <Image Source="blade.gif" HeightRequest="50" Margin="0" />
+                <Label Text="Armorer" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.Armorer}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Button VerticalOptions="Center" HorizontalOptions="End" Text="+" ></Button>
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding Character.CharacterLevels[0].Armorer_Increased_By}" VerticalOptions="Center" HorizontalOptions="Start" />
+                <Button VerticalOptions="Center" HorizontalOptions="Start" Text="+" ></Button>
+                <Label Text="{Binding Character.Armorer_Is_Major}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
             </StackLayout>
         </Frame>
         <Frame>
             <StackLayout Orientation="Horizontal">
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Intelligence" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Intelligence}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                <Label Text="Armorer" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.Armorer}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding Character.CharacterLevels[0].Armorer_Increased_By}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                <Label Text="{Binding Character.Armorer_Is_Major}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
             </StackLayout>
         </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Willpower" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Willpower}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Agility" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Agility}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Speed" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Speed}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Endurance" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Endurance}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Personality" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Personality}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Luck" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Luck}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
+
+
     </VerticalStackLayout>
+        </ScrollView>
 </ContentPage>

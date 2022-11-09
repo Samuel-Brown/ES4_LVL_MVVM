@@ -140,7 +140,7 @@ type Character =
     OverallLevel        : int
 
     CharacterLevels              : Level[]
-   
+    
     }
 
     module Characters =
@@ -289,8 +289,7 @@ type Character =
 
                 CharacterLevels     = levels;
 
-                
-
+               
                 Base_Armorer        = 5 + Race_Starting_Skill_Bonus(race)[0] + Class_Major_Skill_Bonus(standardClass)[0]
                 Armorer             = 5 + Race_Starting_Skill_Bonus(race)[0] + Class_Major_Skill_Bonus(standardClass)[0] + Current_Skill_Level(levels,Skill.Armorer)
                 Armorer_Is_Major = positive_to_bool(Class_Major_Skill_Bonus(standardClass)[0])

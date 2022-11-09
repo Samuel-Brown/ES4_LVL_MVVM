@@ -65,7 +65,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         public NewCharacterPageViewModel(INavigationService navigationService, IDataService dataService)
         {
-            //_dataService = dataService;
+            _dataService = dataService;
             _navigationService = navigationService;
             txtCommand = new Command(() => txtFunction());
             Name = "Hello  World";

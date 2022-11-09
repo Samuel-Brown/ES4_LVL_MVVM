@@ -2,14 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ES4_LVL_MVVM.MVVM.View.LevelUpPage">
-    <VerticalStackLayout Margin="5">
+    <ScrollView>
+        <VerticalStackLayout Margin="5">
         <Label Text="Attributes" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
         <Frame>
             <StackLayout Orientation="Horizontal">
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Strength" VerticalOptions="Center" Margin="20,0,0,0" HorizontalOptions="FillAndExpand"/>
-                <Label Text="{Binding Character.Strength}" VerticalOptions="Center" HorizontalOptions="End" />
-                <Label Text="{Binding StrengthIncrease}" VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="Strength" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.Strength}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding StrengthIncrease}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </Frame>
         <Frame>
@@ -17,7 +19,8 @@
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
                 <Label Text="Intelligence" VerticalOptions="Center" Margin="20,0,0,0"/>
                 <Label Text="{Binding Character.Intelligence}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding IntelligenceIncrease}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding IntelligenceIncrease}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </Frame>
         <Frame>
@@ -25,7 +28,8 @@
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
                 <Label Text="Willpower" VerticalOptions="Center" Margin="20,0,0,0"/>
                 <Label Text="{Binding Character.Willpower}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding WillpowerIncrease}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding WillpowerIncrease}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </Frame>
         <Frame>
@@ -33,7 +37,8 @@
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
                 <Label Text="Agility" VerticalOptions="Center" Margin="20,0,0,0"/>
                 <Label Text="{Binding Character.Agility}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding AgilityIncrease}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding AgilityIncrease}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </Frame>
         <Frame>
@@ -41,7 +46,8 @@
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
                 <Label Text="Speed" VerticalOptions="Center" Margin="20,0,0,0"/>
                 <Label Text="{Binding Character.Speed}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding SpeedIncrease}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding SpeedIncrease}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </Frame>
         <Frame>
@@ -49,7 +55,8 @@
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
                 <Label Text="Endurance" VerticalOptions="Center" Margin="20,0,0,0"/>
                 <Label Text="{Binding Character.Endurance}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding EnduranceIncrease}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding EnduranceIncrease}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </Frame>
         <Frame>
@@ -57,7 +64,8 @@
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
                 <Label Text="Personality" VerticalOptions="Center" Margin="20,0,0,0"/>
                 <Label Text="{Binding Character.Personality}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding PersonalityIncrease}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding PersonalityIncrease}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </Frame>
         <Frame>
@@ -65,9 +73,11 @@
                 <Image Source="strength.gif" HeightRequest="50" Margin="0" />
                 <Label Text="Luck" VerticalOptions="Center" Margin="20,0,0,0"/>
                 <Label Text="{Binding Character.Luck}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding LuckIncrease}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <Label Text="+ " VerticalOptions="Center" HorizontalOptions="End" />
+                <Label Text="{Binding LuckIncrease}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </Frame>
 
     </VerticalStackLayout>
+        </ScrollView>
 </ContentPage>
