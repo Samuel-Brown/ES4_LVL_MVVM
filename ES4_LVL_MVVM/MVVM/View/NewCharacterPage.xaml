@@ -3,24 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ES4_LVL_MVVM.MVVM.View.NewCharacterPage"
              Title="NewCharacterPage">
+    <ScrollView>
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Editor
-            Text="{Binding character.StandardClass}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            Text="{Binding Name}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button
-            Text="Submit"
-            Command="{Binding txtCommand}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            <Frame>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Name" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Name" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Picker ItemsSource="{Binding ClassList}">
+                    </Picker>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Name" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Name" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+
 
         <Picker
             ItemsSource="{Binding ClassList}"
@@ -32,22 +42,15 @@
 
 
 
-        <Frame BorderColor="Red" CornerRadius="10">
+        <Frame>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Frame wrapped around a Label" />
-                <Entry Text="Hi boi"></Entry>
+                
             </StackLayout>
         </Frame>
 
 
 
 
-
-
-
-
-
-
-
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

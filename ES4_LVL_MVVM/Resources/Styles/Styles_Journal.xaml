@@ -172,7 +172,7 @@
     <Style TargetType="Picker">
         <Setter Property="TextColor" Value="{StaticResource HardPencil}" />
         <Setter Property="TitleColor" Value="{StaticResource HardPencil}" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="{StaticResource HardPencil}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -181,8 +181,8 @@
                     <VisualState x:Name="Normal" />
                     <VisualState x:Name="Disabled">
                         <VisualState.Setters>
-                            <Setter Property="TextColor" Value="{StaticResource Wood}" />
-                            <Setter Property="TitleColor" Value="{StaticResource Wood}" />
+                            <Setter Property="TextColor" Value="{StaticResource Pencil}" />
+                            <Setter Property="TitleColor" Value="{StaticResource Pencil}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
