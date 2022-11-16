@@ -1,4 +1,5 @@
-﻿using ES4_LVL_MVVM.Contracts.Services;
+﻿using ES4_LVL_F;
+using ES4_LVL_MVVM.Contracts.Services;
 using ES4_LVL_MVVM.MVVM.View;
 using ES4_LVL_MVVM.MVVM.ViewModels;
 using System.Diagnostics;
@@ -8,6 +9,7 @@ namespace ES4_LVL_MVVM.Services
     public class NavigationService : INavigationService
     {
         readonly IServiceProvider _services;
+
 
         protected INavigation Navigation
         {
@@ -29,11 +31,39 @@ namespace ES4_LVL_MVVM.Services
         public NavigationService(IServiceProvider services)
             => _services = services;
 
+
+        //-----------------------------------------------------NavigateTo Commands------------------
+
+
+
         public Task NavigateToMainPage()
             => NavigateToPage<MainPage>();
 
         public Task NavigateToNewCharacterPage()
             => NavigateToPage<NewCharacterPage>();
+
+        public Task NavigateToCharacterPage()
+            => NavigateToPage<CharacterPage>();
+        public Task NavigateToCharacterPage(Character character)
+            => NavigateToPage<CharacterPage>(character);
+
+
+        public Task NavigateToAttributesPage()
+            => NavigateToPage<AttributesPage>();
+
+        public Task NavigateToSkillsPage()
+            => NavigateToPage<SkillsPage>();
+
+        public Task NavigateToLevelUpPage()
+            => NavigateToPage<LevelUpPage>();
+
+        public Task NavigateToLevelUpPage(Character character)
+            => NavigateToPage<LevelUpPage>(character);
+        public Task NavigateToShellPage()
+            => NavigateToPage<ShellPage>();
+
+        public Task NavigateToShellPage(Character character)
+            => NavigateToPage<ShellPage>(character);
 
 
         public Task NavigateBack()

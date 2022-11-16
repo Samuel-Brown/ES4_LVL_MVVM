@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ES4_LVL_MVVM.MVVM.View.CharacterPage">
+    <ScrollView>        
+        <VerticalStackLayout Margin="5">
+        <Label Text="{Binding Character.Name}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
+                <Label Text="Race" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.Race}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
+                <Label Text="Birthsign" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.Birthsign}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
+                <Label Text="Class" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.ClassName}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
+                <Label Text="Level" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <Label Text="{Binding Character.OverallLevel}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+        
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Health" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <ProgressBar Progress="100" ProgressColor="Red" MinimumWidthRequest="100" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  ></ProgressBar>
+                <Label Text="100" VerticalOptions="Center" Margin="20,0,20,0"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Magica" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <ProgressBar Progress="100" ProgressColor="Blue" MinimumWidthRequest="100" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  ></ProgressBar>
+                <Label Text="100" VerticalOptions="Center" Margin="20,0,20,0"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Stamina" VerticalOptions="Center" Margin="20,0,0,0"/>
+                <ProgressBar Progress="100" ProgressColor="Green" MinimumWidthRequest="100" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  ></ProgressBar>
+                <Label Text="100" VerticalOptions="Center" Margin="20,0,20,0"/>
+            </StackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+
+        </ScrollView>
+
+</ContentPage>
+
+
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <BoxView Color="Green" />
+        <Label Text="Row 0, Column 0"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Column="1"
+                 Color="Blue" />
+        <Label Grid.Column="1"
+               Text="Row 0, Column 1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="1"
+                 Color="Teal" />
+        <Label Grid.Row="1"
+               Text="Row 1, Column 0"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="Purple" />
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="Row1, Column 1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="2"
+                 Grid.ColumnSpan="2"
+                 Color="Red" />
+        <Label Grid.Row="2"
+               Grid.ColumnSpan="2"
+               Text="Row 2, Columns 0 and 1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+    </Grid>-->
+
+    
+    
+    
+<!--<Label 
+            Text="{Binding character.Name}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />-->

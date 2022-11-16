@@ -2,11 +2,11 @@ using ES4_LVL_MVVM.MVVM.ViewModels;
 
 namespace ES4_LVL_MVVM.MVVM.View;
 
-public partial class NewCharacterPage : ContentPage
+public partial class SkillsPage : ContentPage
 {
-	public NewCharacterPage(NewCharacterPageViewModel viewModel)
-	{
+	public SkillsPage(SkillsPageViewModel viewModel)
+    {
         BindingContext = viewModel;
         InitializeComponent();
-	}
+    }
 }

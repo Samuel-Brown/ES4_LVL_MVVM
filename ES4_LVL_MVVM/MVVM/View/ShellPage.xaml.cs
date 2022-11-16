@@ -2,11 +2,12 @@ using ES4_LVL_MVVM.MVVM.ViewModels;
 
 namespace ES4_LVL_MVVM.MVVM.View;
 
-public partial class NewCharacterPage : ContentPage
+public partial class ShellPage : Shell
 {
-	public NewCharacterPage(NewCharacterPageViewModel viewModel)
-	{
+	public ShellPage(CharacterPageViewModel viewModel)
+    {
         BindingContext = viewModel;
         InitializeComponent();
-	}
+    }
+
 }

@@ -49,7 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="MVVM\Model\" />
+	  <None Remove="Resources\Images\strength.gif" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -57,9 +57,51 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="MVVM\View\ShellPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\LevelUpPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\SkillsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\AttributesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\CharacterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\NewCharacterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\Styles_Journal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="MVVM\Model\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ES4_LVL_F\ES4_LVL_F.fsproj" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Compile Update="MVVM\View\ShellPage.xaml.cs">
+	    <DependentUpon>ShellPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MVVM\View\LevelUpPage.xaml.cs">
+	    <DependentUpon>LevelUpPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MVVM\View\SkillsPage.xaml.cs">
+	    <DependentUpon>SkillsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MVVM\View\AttributesPage.xaml.cs">
+	    <DependentUpon>AttributesPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
