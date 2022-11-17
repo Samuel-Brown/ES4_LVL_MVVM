@@ -49,7 +49,45 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\acrobatics.gif" />
+	  <None Remove="Resources\Images\agility.gif" />
+	  <None Remove="Resources\Images\alchemy.gif" />
+	  <None Remove="Resources\Images\alteration.gif" />
+	  <None Remove="Resources\Images\altmer.png" />
+	  <None Remove="Resources\Images\argonian.png" />
+	  <None Remove="Resources\Images\armorer.gif" />
+	  <None Remove="Resources\Images\athletics.gif" />
+	  <None Remove="Resources\Images\blade.gif" />
+	  <None Remove="Resources\Images\block.gif" />
+	  <None Remove="Resources\Images\blunt.gif" />
+	  <None Remove="Resources\Images\bosmer.png" />
+	  <None Remove="Resources\Images\breton.png" />
+	  <None Remove="Resources\Images\conjuration.gif" />
+	  <None Remove="Resources\Images\destruction.gif" />
+	  <None Remove="Resources\Images\dunmer.png" />
+	  <None Remove="Resources\Images\endurance.gif" />
+	  <None Remove="Resources\Images\hand_to_hand.gif" />
+	  <None Remove="Resources\Images\heavy_armor.gif" />
+	  <None Remove="Resources\Images\illusion.gif" />
+	  <None Remove="Resources\Images\imperial.png" />
+	  <None Remove="Resources\Images\Intelligence.gif" />
+	  <None Remove="Resources\Images\khajiit.png" />
+	  <None Remove="Resources\Images\light_armor.gif" />
+	  <None Remove="Resources\Images\luck.gif" />
+	  <None Remove="Resources\Images\marksman.gif" />
+	  <None Remove="Resources\Images\mercantile.gif" />
+	  <None Remove="Resources\Images\mysticism.gif" />
+	  <None Remove="Resources\Images\nord.png" />
+	  <None Remove="Resources\Images\orsimer.png" />
+	  <None Remove="Resources\Images\personality.gif" />
+	  <None Remove="Resources\Images\redguard.png" />
+	  <None Remove="Resources\Images\restoration.gif" />
+	  <None Remove="Resources\Images\security.gif" />
+	  <None Remove="Resources\Images\sneak.gif" />
+	  <None Remove="Resources\Images\speechcraft.gif" />
+	  <None Remove="Resources\Images\speed.gif" />
 	  <None Remove="Resources\Images\strength.gif" />
+	  <None Remove="Resources\Images\willpower.gif" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -78,10 +116,6 @@
 	  <MauiXaml Update="Resources\Styles\Styles_Journal.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="MVVM\Model\" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -140,6 +140,8 @@ type Character =
     OverallLevel        : int
 
     CharacterLevels              : Level[]
+
+
     
     }
 
