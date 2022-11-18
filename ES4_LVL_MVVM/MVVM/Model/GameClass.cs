@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ES4_LVL_MVVM.MVVM.Model
 {
 
-    enum Character_CLasses
+    public enum Character_CLasses
     {
         Acrobat,
         Agent,
@@ -33,7 +33,7 @@ namespace ES4_LVL_MVVM.MVVM.Model
         Custom
     }
 
-    internal class GameClass
+    public class GameClass
     {
         private Character_CLasses _character_class;
         private string _display_name;

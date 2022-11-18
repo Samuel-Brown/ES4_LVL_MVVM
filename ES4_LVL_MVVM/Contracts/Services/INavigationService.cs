@@ -1,4 +1,4 @@
-﻿using ES4_LVL_F;
+﻿using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.Contracts.Services
 {

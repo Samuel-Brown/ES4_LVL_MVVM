@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ES4_LVL_MVVM.MVVM.Model
 {
 
-    enum Skills
+    public enum Skills
     {
         Blade,
         Blunt,
@@ -36,7 +36,7 @@ namespace ES4_LVL_MVVM.MVVM.Model
 
 
 
-    internal class Skill
+    public class Skill
     {
 
         private Skills _name;

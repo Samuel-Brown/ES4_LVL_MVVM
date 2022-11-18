@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ES4_LVL_MVVM.MVVM.Model
 {
 
-    enum Races
+    public enum Races
     {
         Altmer,
         Argonian,
@@ -24,7 +24,7 @@ namespace ES4_LVL_MVVM.MVVM.Model
 
 
 
-    internal class Race
+    public class Race
     {
         private bool _gender;
         private Races _race;

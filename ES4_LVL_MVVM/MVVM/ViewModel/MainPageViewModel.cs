@@ -1,7 +1,7 @@
-﻿using ES4_LVL_F;
-using ES4_LVL_MVVM.Contracts.Services;
+﻿using ES4_LVL_MVVM.Contracts.Services;
 using Microsoft.Maui.Networking;
 using System.Collections.ObjectModel;
+using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -10,7 +10,9 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         readonly IDataService _dataService;
         readonly INavigationService _navigationService;
 
-        public ObservableCollection<Character> MyCharacters { get; } = new();
+        public ObservableCollection<Character> MyCharacters { get; set; }
+
+        
 
 
         public Command NavigateToNewCharacterPageCommand
@@ -29,7 +31,13 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         {
             _dataService = dataService;
             _navigationService = navigationService;
-            MyCharacters = _dataService.GetCharacters();
+
+            Character[] TempCharacterArray = new Character[20];
+            TempCharacterArray[0] = dataService.GetCharacters()[0]; 
+
+            MyCharacters = new ObservableCollection<Character>() { TempCharacterArray[0] };
+
+            MyCharacters.Add(TempCharacterArray[0]);
 
         }
 

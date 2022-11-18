@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ES4_LVL_MVVM.MVVM.Model
 {
 
-    enum Birthsigns
+    public enum Birthsigns
     {
         Apprentice, 
         Atronach,
@@ -26,7 +26,7 @@ namespace ES4_LVL_MVVM.MVVM.Model
 
 
 
-    internal class Birthsign
+    public class Birthsign
     {
         private Birthsigns _birthsign;
         private string _display_name;

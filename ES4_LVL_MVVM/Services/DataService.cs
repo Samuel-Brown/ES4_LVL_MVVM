@@ -1,31 +1,29 @@
-﻿using ES4_LVL_F;
-using ES4_LVL_MVVM.Contracts.Services;
+﻿using ES4_LVL_MVVM.Contracts.Services;
 using System.Collections.ObjectModel;
+using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.Services
 {
     public class DataService : IDataService
     {
 
-        public ObservableCollection<Character> MyCharacters { get; } = new();
+        private Character[] _characterArray;
 
-
-        public ObservableCollection<Character> GetCharacters()
-        {
-            return MyCharacters;
-        }
+        public Character[] MyCharacters { get { return _characterArray; } set { _characterArray = value; } }
 
         public DataService()
         {
+            Character TempLoadCharacter = new Character("Bob", new Race(true, Races.Argonian), "Test", new Birthsign(Birthsigns.Atronach), new GameClass(Character_CLasses.Scout));
 
-            Level TestLevel1 = ES4_LVL_F.Levels.New_Level(0, 5, 4, 0, 4, 0, 0, 10, 0, 1, 4, 0, 1, 0, 5, 0, 0, 0, 3, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0);
-            Level[] TestLevels = new Level[] { TestLevel1 };
-            Character MyCharacter = Characters.New_Character("Frederick", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat, TestLevels);
-
-            MyCharacters.Add(MyCharacter);
-
-            GetCharacters();
+            _characterArray = new Character[] { TempLoadCharacter };
         }
+
+
+        public Character[] GetCharacters()
+        {
+            return _characterArray;
+        }
+
 
     }
 }

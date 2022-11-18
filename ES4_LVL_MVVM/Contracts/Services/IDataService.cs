@@ -1,12 +1,12 @@
-﻿using ES4_LVL_F;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Net.Http;
+using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.Contracts.Services
 {
     public interface IDataService
     {
-        ObservableCollection<Character> GetCharacters();
+        public Character[] GetCharacters();
     }
 }
 

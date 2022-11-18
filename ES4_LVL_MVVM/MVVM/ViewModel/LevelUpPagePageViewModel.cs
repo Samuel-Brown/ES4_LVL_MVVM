@@ -134,7 +134,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         {
             _dataService = dataService;
             _navigationService = navigationService;
-            Character = _dataService.GetCharacters()[0];
 
             StrengthIncrease =      Levels.Strength_Increases(Character.CharacterLevels[Character.CharacterLevels.Length-1]);
             IntelligenceIncrease =  Levels.Intelligence_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);

@@ -34,7 +34,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         {
             _dataService = dataService;
             _navigationService = navigationService;
-            Character = _dataService.GetCharacters()[0];
         }
 
 
