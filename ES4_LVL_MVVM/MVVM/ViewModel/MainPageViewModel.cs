@@ -23,12 +23,17 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             _dataService = dataService;
             _navigationService = navigationService;
 
-            Character[] TempCharacterArray = new Character[20];
-            TempCharacterArray[0] = dataService.GetCharacters()[0]; 
+            Character[] TempCharacterArray = new Character[dataService.GetCharacters().Length];
+            TempCharacterArray = dataService.GetCharacters(); 
 
-            MyCharacters = new ObservableCollection<Character>() { TempCharacterArray[0] };
+            MyCharacters = new ObservableCollection<Character>();
 
-            
+            foreach(Character character in TempCharacterArray)
+            {
+                MyCharacters.Add(character);
+            }
+
+            //{ dataService.GetCharacters(). }
 
             //MyCharacters.Add(TempCharacterArray[0]);
 
