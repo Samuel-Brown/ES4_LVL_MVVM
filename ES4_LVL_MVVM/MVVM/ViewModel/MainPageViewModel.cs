@@ -12,20 +12,11 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         public ObservableCollection<Character> MyCharacters { get; set; }
 
-        
-
-
         public Command NavigateToNewCharacterPageCommand
             => new Command(async () => await _navigationService.NavigateToNewCharacterPage());
 
-        public Command NavigateCommand
-            => new Command(async () => await _navigationService.NavigateToNewCharacterPage());
-
-        public Command NavigateToCharacterPageCommand
-            => new Command(async () => await _navigationService.NavigateToCharacterPage(MyCharacters[0]));
-
         public Command NavigateToShellPageCommand
-            => new Command(async () => await _navigationService.NavigateToShellPage());
+            => new Command(async () => await _navigationService.NavigateToShellPage(_dataService.GetCharacters()[0]));
 
         public MainPageViewModel(IDataService dataService, INavigationService navigationService)
         {
@@ -37,7 +28,10 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
             MyCharacters = new ObservableCollection<Character>() { TempCharacterArray[0] };
 
-            MyCharacters.Add(TempCharacterArray[0]);
+            
+
+            //MyCharacters.Add(TempCharacterArray[0]);
+
 
         }
 

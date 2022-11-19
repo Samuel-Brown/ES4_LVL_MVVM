@@ -11,7 +11,6 @@ namespace ES4_LVL_MVVM.Contracts.Services
         Task NavigateToAttributesPage();
         Task NavigateToSkillsPage();
         Task NavigateToLevelUpPage();
-        Task NavigateToShellPage();
         Task NavigateToShellPage(Character myCharacter);
         Task NavigateToCharacterPage(Character myCharacter);
         Task NavigateToLevelUpPage(Character myCharacter);

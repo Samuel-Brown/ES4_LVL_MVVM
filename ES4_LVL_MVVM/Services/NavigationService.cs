@@ -59,8 +59,6 @@ namespace ES4_LVL_MVVM.Services
 
         public Task NavigateToLevelUpPage(Character character)
             => NavigateToPage<LevelUpPage>(character);
-        public Task NavigateToShellPage()
-            => NavigateToPage<ShellPage>();
 
         public Task NavigateToShellPage(Character character)
             => NavigateToPage<ShellPage>(character);

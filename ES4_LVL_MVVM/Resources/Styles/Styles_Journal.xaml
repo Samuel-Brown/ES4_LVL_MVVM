@@ -165,8 +165,9 @@
     </Style>
 
     <Style TargetType="ListView">
-        <Setter Property="SeparatorColor" Value="{StaticResource Brass}" />
-        <Setter Property="RefreshControlColor" Value="{StaticResource HardPencil}" />
+        <Setter Property="SeparatorColor" Value="{StaticResource Pen}" />
+        <Setter Property="RefreshControlColor" Value="{StaticResource Selected}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Brass}" />
     </Style>
 
     <Style TargetType="Picker">
