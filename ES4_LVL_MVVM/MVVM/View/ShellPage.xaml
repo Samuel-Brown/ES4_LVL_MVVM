@@ -2,18 +2,52 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:ES4_LVL_MVVM.MVVM.View"
-       x:Class="ES4_LVL_MVVM.MVVM.View.ShellPage">
-    <TabBar>
+       x:Class="ES4_LVL_MVVM.MVVM.View.ShellPage"
+       Shell.NavBarIsVisible="false">
+    <TabBar Shell.PresentationMode="Animated">
+        <Tab
+            Icon="strength.gif">
+            <ShellContent x:Name="CharacterSelection" ContentTemplate="{DataTemplate local:CharacterSelectionPage}" />
+        </Tab>
+        <Tab Title="Character"
+            Icon="strength.gif">
+            <ShellContent x:Name="Character" ContentTemplate="{DataTemplate local:CharacterPage}" />
+        </Tab>
+        <Tab Title="Attributes"
+            Icon="strength.gif" Route="">
+            <ShellContent x:Name="Attributes" ContentTemplate="{DataTemplate local:AttributesPage}" />
+        </Tab>
+        <Tab Title="Skills"
+            Icon="strength.gif" >
+            <ShellContent x:Name="Skills" ContentTemplate="{DataTemplate local:SkillsPage}" />
+        </Tab>
+        <Tab Title="Level Up"
+            Icon="strength.gif">
+            <ShellContent x:Name="LevelUp" Route="LevelUpPage" ContentTemplate="{DataTemplate local:LevelUpPage}" />
+        </Tab>
+    </TabBar>
+</Shell>
+
+
+
+
+
+
+
+
+<!--
+    
+        <TabBar>
         <Tab Title="Character"
             Icon="strength.gif">
             <ShellContent ContentTemplate="{DataTemplate local:CharacterPage}" />
         </Tab>
         <Tab Title="Attributes"
-            Icon="strength.gif">
+            Icon="strength.gif" Route="">
             <ShellContent ContentTemplate="{DataTemplate local:AttributesPage}" />
         </Tab>
         <Tab Title="Skills"
-            Icon="strength.gif">
+            Icon="strength.gif" >
             <ShellContent ContentTemplate="{DataTemplate local:SkillsPage}" />
         </Tab>
         <Tab Title="Level Up"
@@ -21,4 +55,20 @@
             <ShellContent ContentTemplate="{DataTemplate local:LevelUpPage}" />
         </Tab>
     </TabBar>
-</Shell>
+    
+    
+    -->
+
+
+
+
+
+
+<!--<TabBar Route="Login">
+    <ShellContent  ContentTemplate="{DataTemplate local:LoginPage}" />
+</TabBar>
+
+<TabBar Route="Home">
+    <ShellContent Title="Home" Icon="home.png" ContentTemplate="{DataTemplate local:HomePage}"/>
+    <ShellContent Title="Articles" Icon="articles.png"  ContentTemplate="{DataTemplate local:ArticlesPage}" />
+</TabBar>-->

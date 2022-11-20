@@ -38,9 +38,5 @@ namespace ES4_LVL_MVVM.Services
             return _characterArray[i];
         }
 
-        public Task SetCharacterIndex(int i)
-        {
-            CharacterIndex = i;
-        }
     }
 }

@@ -95,6 +95,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="MVVM\View\CharacterSelectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\ShellPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -124,6 +127,9 @@
 
 
 	<ItemGroup>
+	  <Compile Update="MVVM\View\CharacterSelectionPage.xaml.cs">
+	    <DependentUpon>CharacterSelectionPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="MVVM\View\ShellPage.xaml.cs">
 	    <DependentUpon>ShellPage.xaml</DependentUpon>
 	  </Compile>

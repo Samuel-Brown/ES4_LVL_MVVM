@@ -35,10 +35,6 @@ namespace ES4_LVL_MVVM.Services
         //-----------------------------------------------------NavigateTo Commands------------------
 
 
-
-        public Task NavigateToMainPage()
-            => NavigateToPage<MainPage>();
-
         public Task NavigateToNewCharacterPage()
             => NavigateToPage<NewCharacterPage>();
 
@@ -46,7 +42,6 @@ namespace ES4_LVL_MVVM.Services
             => NavigateToPage<CharacterPage>();
         public Task NavigateToCharacterPage(Character character)
             => NavigateToPage<CharacterPage>(character);
-
 
         public Task NavigateToAttributesPage()
             => NavigateToPage<AttributesPage>();
@@ -60,8 +55,15 @@ namespace ES4_LVL_MVVM.Services
         public Task NavigateToLevelUpPage(Character character)
             => NavigateToPage<LevelUpPage>(character);
 
-        public Task NavigateToShellPage(Character character)
-            => NavigateToPage<ShellPage>(character);
+        public Task NavigateToShellPage()
+            => NavigateToPage<ShellPage>();
+
+        public Task NavigateToCharacterSelectionPage()
+            => NavigateToPage<CharacterSelectionPage>();
+
+
+
+
 
 
         public Task NavigateBack()
@@ -176,5 +178,6 @@ namespace ES4_LVL_MVVM.Services
 
         private T ResolvePage<T>() where T : Page
             => _services.GetService<T>();
+
     }
 }
