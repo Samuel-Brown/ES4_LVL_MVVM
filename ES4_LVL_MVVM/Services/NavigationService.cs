@@ -98,6 +98,39 @@ namespace ES4_LVL_MVVM.Services
                 throw new InvalidOperationException($"Unable to resolve type {typeof(T).FullName}");
         }
 
+
+        private async Task NavigateToPage<T>(Character parameter) where T : Page
+        {
+            var toPage = ResolvePage<T>();
+
+            if (toPage is not null)
+            {
+                //Subscribe to the toPage's NavigatedTo event
+                toPage.NavigatedTo += Page_NavigatedTo;
+
+                //Get VM of the toPage
+                var toViewModel = GetPageViewModelBase(toPage);
+
+                //Call navigatingTo on VM, passing in the paramter
+                if (toViewModel is not null)
+                    await toViewModel.OnNavigatingTo(parameter);
+
+                //Navigate to requested page
+                await Navigation.PushAsync(toPage, true);
+
+                //Subscribe to the toPage's NavigatedFrom event
+                toPage.NavigatedFrom += Page_NavigatedFrom;
+            }
+            else
+                throw new InvalidOperationException($"Unable to resolve type {typeof(T).FullName}");
+        }
+
+
+
+
+
+
+
         private async void Page_NavigatedFrom(object sender, NavigatedFromEventArgs e)
         {
             //To determine forward navigation, we look at the 2nd to last item on the NavigationStack

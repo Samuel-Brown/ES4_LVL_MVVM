@@ -5,146 +5,86 @@
              xmlns:viewmodel="clr-namespace:ES4_LVL_MVVM.MVVM.ViewModels"
              x:Class="ES4_LVL_MVVM.MVVM.View.MainPage">
     <ContentPage.Resources>
-        <DataTemplate x:Key="CharacterList">
-            <Frame>
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer 
-                                        Command="{Binding NavigateToNewCharacterPageCommand}"/>
-                </Frame.GestureRecognizers>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="{Binding Race.Image}" HeightRequest="50" Margin="0" />
-                    <Label Text="{Binding Name}" VerticalOptions="Center" Margin="20,0,0,0"/>
-                    <Label Text="{Binding Class.Display_Name}" VerticalOptions="Center" Margin="20,0,0,0"/>
-                    <Label Text="{Binding Level}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-                    <Button Text="{Binding Name}" Command="{Binding NavigateToNewCharacterPageCommand}"/>
-                </StackLayout>
-            </Frame>
-            
+        <DataTemplate x:Key="CharacterCardView" x:DataType="model:Character">
+            <Grid Padding="10">
+                <Frame>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=NavigateToCharacterPageCommand}" CommandParameter="{Binding .}"/>
+                    </Frame.GestureRecognizers>
+                    <Grid Padding="0" ColumnDefinitions="125,*">
+                        <Image Aspect="AspectFill" HeightRequest="125" Source="{Binding Race.Image}" WidthRequest="125" />
+                        <VerticalStackLayout Grid.Column="1" Padding="10">
+                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding GameClass.Display_Name}" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+            </Grid>
         </DataTemplate>
     </ContentPage.Resources>
-    
-    
     <ScrollView>
-
-        <CarouselView ItemsSource="{Binding MyCharacters}">
-            <CarouselView.ItemTemplate>
-                <DataTemplate x:DataType="model:Character">
-                    <StackLayout>
-                        <Frame HasShadow="True"
-                       BorderColor="DarkGray"
-                       CornerRadius="5"
-                       Margin="20"
-                       HeightRequest="300"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand">
-                            <StackLayout>
-                                <Label Text="{Binding Name}"
-                               FontAttributes="Bold"
-                               FontSize="18"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center" />
-                                <Image Source="{Binding Race.Image}"
-                               Aspect="AspectFill"
-                               HeightRequest="150"
-                               WidthRequest="150"
-                               HorizontalOptions="Center" />
-                                <Label Text="{Binding GameClass.Display_Name}"
-                               HorizontalOptions="Center" />
-                                <Label Text="{Binding Level}"
-                               FontAttributes="Italic"
-                               HorizontalOptions="Center"
-                               MaxLines="5"
-                               LineBreakMode="TailTruncation" />
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+        <StackLayout>
+            
+            <CollectionView ItemsSource="{Binding MyCharacters}" ItemTemplate="{StaticResource CharacterCardView}" SelectionMode="Single"></CollectionView>
+            <Button Text="test" Command="{Binding NavigateToCharacterPageCommand}" CommandParameter="{Binding MyCharacters[2]}"></Button>
 
 
-        <!--<Button Text="test" Command="{Binding NavigateToNewCharacterPageCommand}"/>-->
-        <!--<CollectionView ItemsSource="{Binding MyCharacters}" ItemTemplate="{StaticResource CharacterList}" SelectionMode="None" />-->
-        <!--<ListView ItemsSource="{Binding MyCharacters}" ItemTemplate="{StaticResource CharacterList}" />-->
-            <!--<CollectionView
-                    ItemsSource="{Binding MyCharacters}"
-                    BackgroundColor="Transparent"
-                    SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Character">
-                        <Grid Padding="10">
-                            <Frame HeightRequest="125">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer 
-                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=NavigateToNewCharacterPageCommand}"
-                                            CommandParameter="{Binding .}"/>
-                                </Frame.GestureRecognizers>
-                                <Grid Padding="0" ColumnDefinitions="125,*">
-                                    <Image
-                                            Aspect="AspectFill"
-                                            HeightRequest="125"
-                                            Source="{Binding Race.Image}"
-                                            WidthRequest="125" />
-                                    <VerticalStackLayout
-                                            Grid.Column="1"
-                                            Padding="10">
-                                        <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
-                                        <Label Style="{StaticResource MediumLabel}" Text="{Binding Race.Display_Name}" />
-                                    </VerticalStackLayout>
-                                </Grid>
-                            </Frame>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>-->
-
+        </StackLayout>
+        
         
     </ScrollView>
 
+
+
+
+
+    <!--<ContentPage.Resources>
+        <DataTemplate x:Key="CharacterCarouselView" x:DataType="model:Character">
+            <StackLayout>
+                <Frame HasShadow="True"
+                BorderColor="DarkGray"
+                CornerRadius="5"
+                Margin="20"
+                HeightRequest="500"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label Text="{Binding Name}"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                        <Image Source="{Binding Race.Image}"
+                        Aspect="AspectFill"
+                        HeightRequest="150"
+                        WidthRequest="150"
+                        HorizontalOptions="Center" />
+                        <Label Text="{Binding GameClass.Display_Name}"
+                        HorizontalOptions="Center" />
+                        <Label Text="{Binding Level}"
+                        FontAttributes="Italic"
+                        HorizontalOptions="Center"
+                        MaxLines="5"
+                        LineBreakMode="TailTruncation" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </DataTemplate>
+
+        <DataTemplate x:Key="CharacterCollectionView" x:DataType="model:Character">
+
+            <StackLayout>
+                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Image Source="{Binding Race.Image}" Aspect="AspectFill" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" />
+                <Label Text="{Binding GameClass.Display_Name}" HorizontalOptions="Center" />
+                <Label Text="{Binding Level}" FontAttributes="Italic" HorizontalOptions="Center"/>
+            </StackLayout>
+
+        </DataTemplate>
+    </ContentPage.Resources>
+    <ScrollView>
+        <CollectionView ItemsSource="{Binding MyCharacters}" ItemTemplate="{StaticResource CharacterCollectionView}" SelectionMode="Single"></CollectionView>
+    </ScrollView>-->
 </ContentPage>
     
-    
-    
-    
-    
-    
-    
-<!--<Frame>
-                
-                <Grid Padding="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.RowSpan="2" Source="{Binding Race.Image}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60" />
-                    <Label Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" />
-                    <Label Grid.Column="1" Text="{Binding Level}" FontAttributes="Bold" />
-                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Race.Display_Name}" FontAttributes="Italic" VerticalOptions="End" />
-                </Grid>
-    
-    
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer 
-                                            Command="{Binding NavigateToShellPageCommand}"
-                                            CommandParameter="{Binding MyCharacters[0]}"/>
-                </Frame.GestureRecognizers>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                    <Label Text="{Binding MyCharacters[0].Name}" VerticalOptions="Center" Margin="20,0,0,0"/>
-                    <Label Text="{Binding MyCharacters[0].ClassName}" VerticalOptions="Center" Margin="20,0,0,0"/>
-                    <Label Text="{Binding MyCharacters[0].Race.Display_Name}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </Frame>
-            
-
-            <Button 
-                Text="New Character"
-                IsEnabled="False"
-                FontAttributes="Bold"
-                Grid.Row="3"
-                Command="{Binding NavigateToNewCharacterPageCommand}"
-                HorizontalOptions="Center" />-->
+   

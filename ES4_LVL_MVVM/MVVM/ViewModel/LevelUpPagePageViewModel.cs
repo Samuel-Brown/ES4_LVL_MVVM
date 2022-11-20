@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using ES4_LVL_F;
+using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -28,104 +28,104 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             }
         }
 
-        private int _strengthIncrease;
-        private int _intelligenceIncrease;
-        private int _willpowerIncrease;
-        private int _agilityIncrease;
-        private int _enduranceIncrease;
-        private int _personalityIncrease;
-        private int _luckIncrease;
+        //private int _strengthIncrease;
+        //private int _intelligenceIncrease;
+        //private int _willpowerIncrease;
+        //private int _agilityIncrease;
+        //private int _enduranceIncrease;
+        //private int _personalityIncrease;
+        //private int _luckIncrease;
 
-        public int StrengthIncrease
-        {
-            get => _strengthIncrease;
-            set
-            {
-                if (value != _strengthIncrease)
-                {
-                    _strengthIncrease = value;
-                    RaisePropertyChanged(property: nameof(StrengthIncrease));
-                }
-            }
-        }
+        //public int StrengthIncrease
+        //{
+        //    get => _strengthIncrease;
+        //    set
+        //    {
+        //        if (value != _strengthIncrease)
+        //        {
+        //            _strengthIncrease = value;
+        //            RaisePropertyChanged(property: nameof(StrengthIncrease));
+        //        }
+        //    }
+        //}
 
-        public int IntelligenceIncrease
-        {
-            get => _intelligenceIncrease;
-            set
-            {
-                if (value != _intelligenceIncrease)
-                {
-                    _intelligenceIncrease = value;
-                    RaisePropertyChanged(property: nameof(IntelligenceIncrease));
-                }
-            }
-        }
+        //public int IntelligenceIncrease
+        //{
+        //    get => _intelligenceIncrease;
+        //    set
+        //    {
+        //        if (value != _intelligenceIncrease)
+        //        {
+        //            _intelligenceIncrease = value;
+        //            RaisePropertyChanged(property: nameof(IntelligenceIncrease));
+        //        }
+        //    }
+        //}
 
-        public int WillpowerIncrease
-        {
-            get => _willpowerIncrease;
-            set
-            {
-                if (value != _willpowerIncrease)
-                {
-                    _willpowerIncrease = value;
-                    RaisePropertyChanged(property: nameof(WillpowerIncrease));
-                }
-            }
-        }
+        //public int WillpowerIncrease
+        //{
+        //    get => _willpowerIncrease;
+        //    set
+        //    {
+        //        if (value != _willpowerIncrease)
+        //        {
+        //            _willpowerIncrease = value;
+        //            RaisePropertyChanged(property: nameof(WillpowerIncrease));
+        //        }
+        //    }
+        //}
 
-        public int AgilityIncrease
-        {
-            get => _agilityIncrease;
-            set
-            {
-                if (value != _agilityIncrease)
-                {
-                    _agilityIncrease = value;
-                    RaisePropertyChanged(property: nameof(AgilityIncrease));
-                }
-            }
-        }
+        //public int AgilityIncrease
+        //{
+        //    get => _agilityIncrease;
+        //    set
+        //    {
+        //        if (value != _agilityIncrease)
+        //        {
+        //            _agilityIncrease = value;
+        //            RaisePropertyChanged(property: nameof(AgilityIncrease));
+        //        }
+        //    }
+        //}
 
-        public int EnduranceIncrease
-        {
-            get => _enduranceIncrease;
-            set
-            {
-                if (value != _enduranceIncrease)
-                {
-                    _enduranceIncrease = value;
-                    RaisePropertyChanged(property: nameof(EnduranceIncrease));
-                }
-            }
-        }
+        //public int EnduranceIncrease
+        //{
+        //    get => _enduranceIncrease;
+        //    set
+        //    {
+        //        if (value != _enduranceIncrease)
+        //        {
+        //            _enduranceIncrease = value;
+        //            RaisePropertyChanged(property: nameof(EnduranceIncrease));
+        //        }
+        //    }
+        //}
 
-        public int PersonalityIncrease
-        {
-            get => _personalityIncrease;
-            set
-            {
-                if (value != _personalityIncrease)
-                {
-                    _personalityIncrease = value;
-                    RaisePropertyChanged(property: nameof(PersonalityIncrease));
-                }
-            }
-        }
+        //public int PersonalityIncrease
+        //{
+        //    get => _personalityIncrease;
+        //    set
+        //    {
+        //        if (value != _personalityIncrease)
+        //        {
+        //            _personalityIncrease = value;
+        //            RaisePropertyChanged(property: nameof(PersonalityIncrease));
+        //        }
+        //    }
+        //}
 
-        public int LuckIncrease
-        {
-            get => _luckIncrease;
-            set
-            {
-                if (value != _luckIncrease)
-                {
-                    _luckIncrease = value;
-                    RaisePropertyChanged(property: nameof(LuckIncrease));
-                }
-            }
-        }
+        //public int LuckIncrease
+        //{
+        //    get => _luckIncrease;
+        //    set
+        //    {
+        //        if (value != _luckIncrease)
+        //        {
+        //            _luckIncrease = value;
+        //            RaisePropertyChanged(property: nameof(LuckIncrease));
+        //        }
+        //    }
+        //}
 
 
 
@@ -135,13 +135,13 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             _dataService = dataService;
             _navigationService = navigationService;
 
-            StrengthIncrease =      Levels.Strength_Increases(Character.CharacterLevels[Character.CharacterLevels.Length-1]);
-            IntelligenceIncrease =  Levels.Intelligence_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            WillpowerIncrease =     Levels.Willpower_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            AgilityIncrease =       Levels.Agility_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            EnduranceIncrease =     Levels.Endurance_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            PersonalityIncrease =   Levels.Personality_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            LuckIncrease =          Levels.Luck_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            //StrengthIncrease =      Levels.Strength_Increases(Character.CharacterLevels[Character.CharacterLevels.Length-1]);
+            //IntelligenceIncrease =  Levels.Intelligence_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            //WillpowerIncrease =     Levels.Willpower_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            //AgilityIncrease =       Levels.Agility_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            //EnduranceIncrease =     Levels.Endurance_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            //PersonalityIncrease =   Levels.Personality_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
+            //LuckIncrease =          Levels.Luck_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
 
         }
 

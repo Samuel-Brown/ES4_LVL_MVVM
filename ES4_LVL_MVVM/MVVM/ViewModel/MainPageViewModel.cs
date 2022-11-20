@@ -2,6 +2,9 @@
 using Microsoft.Maui.Networking;
 using System.Collections.ObjectModel;
 using ES4_LVL_MVVM.MVVM.Model;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -10,13 +13,20 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         readonly IDataService _dataService;
         readonly INavigationService _navigationService;
 
+        private Character _selectedCharacter;
+
         public ObservableCollection<Character> MyCharacters { get; set; }
 
         public Command NavigateToNewCharacterPageCommand
             => new Command(async () => await _navigationService.NavigateToNewCharacterPage());
 
+        public Command NavigateToCharacterPageCommand => new Command(async () => await _navigationService.NavigateToCharacterPage(MyCharacters[3]));
+
+        public Command SetCharacterIndex => new Command(async () => await _dataService.SetCharacterIndex(2));
+
+
         public Command NavigateToShellPageCommand
-            => new Command(async () => await _navigationService.NavigateToShellPage(_dataService.GetCharacters()[0]));
+            => new Command(async () => await _navigationService.NavigateToShellPage(_selectedCharacter));
 
         public MainPageViewModel(IDataService dataService, INavigationService navigationService)
         {
@@ -33,12 +43,21 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
                 MyCharacters.Add(character);
             }
 
-            //{ dataService.GetCharacters(). }
-
-            //MyCharacters.Add(TempCharacterArray[0]);
-
 
         }
+
+
+        public void CharacterSelected(int i)
+        {
+
+            _dataService.SetCharacterIndex(i);
+            //_selectedCharacter = selectedCharacter;
+            //NavigateToShellPageCommand.Execute(selectedCharacter);
+        }
+
+
+
+
 
         public override Task OnNavigatedFrom(bool isForwardNavigation)
         {

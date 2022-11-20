@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using ES4_LVL_F;
+using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -34,6 +34,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         {
             _dataService = dataService;
             _navigationService = navigationService;
+            _character = _dataService.GetCharacters()[0];
         }
 
 
@@ -49,7 +50,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         public override Task OnNavigatingTo(object parameter)
         {
             Console.WriteLine($"On navigating to MainPage with parameter {parameter}");
-            Character = (Character)parameter;
+            _character = (Character)parameter;
             return base.OnNavigatingTo(parameter);
         }
 

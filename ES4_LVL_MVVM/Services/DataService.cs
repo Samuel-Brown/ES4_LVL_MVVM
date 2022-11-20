@@ -8,12 +8,15 @@ namespace ES4_LVL_MVVM.Services
     {
 
         private Character[] _characterArray;
+        private int _characterIndex;
 
         public Character[] MyCharacters { get { return _characterArray; } set { _characterArray = value; } }
+        public int CharacterIndex { get { return _characterIndex; } set { _characterIndex = value; } }  
 
         public DataService()
         {
             //Character TempLoadCharacter = new Character("Bob", new Race(true, Races.Argonian), "Test", new Birthsign(Birthsigns.Atronach), new GameClass(Character_CLasses.Scout));
+            _characterIndex = -1;
 
             _characterArray = new Character[] { 
                 new Character("Bob", new Race(true, Races.Argonian), "Magic", new Birthsign(Birthsigns.Atronach), new GameClass(Character_CLasses.Scout)),
@@ -30,6 +33,14 @@ namespace ES4_LVL_MVVM.Services
             return _characterArray;
         }
 
+        public Character GetCharacter(int i)
+        {
+            return _characterArray[i];
+        }
 
+        public Task SetCharacterIndex(int i)
+        {
+            CharacterIndex = i;
+        }
     }
 }

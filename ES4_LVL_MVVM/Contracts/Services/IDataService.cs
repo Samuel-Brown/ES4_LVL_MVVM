@@ -7,6 +7,7 @@ namespace ES4_LVL_MVVM.Contracts.Services
     public interface IDataService
     {
         public Character[] GetCharacters();
+        public void SetCharacterIndex(int i);
     }
 }
 
