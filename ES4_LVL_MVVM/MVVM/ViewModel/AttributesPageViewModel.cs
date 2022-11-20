@@ -28,13 +28,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             }
         }
 
-
-
-
-
-
-
-
         public AttributesPageViewModel(IDataService dataService, INavigationService navigationService)
         {
             _dataService = dataService;

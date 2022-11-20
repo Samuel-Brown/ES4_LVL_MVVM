@@ -10,4 +10,9 @@ public partial class CharacterPage : ContentPage
         InitializeComponent();
     }
 
+    public CharacterPage()
+    {
+        InitializeComponent();
+    }
+
 }

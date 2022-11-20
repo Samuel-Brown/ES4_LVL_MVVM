@@ -4,7 +4,8 @@
              xmlns:model="clr-namespace:ES4_LVL_MVVM.MVVM.Model"
              xmlns:viewmodel="clr-namespace:ES4_LVL_MVVM.MVVM.ViewModels"
              x:Class="ES4_LVL_MVVM.MVVM.View.CharacterSelectionPage"
-             Shell.NavBarIsVisible="false">
+             Shell.NavBarIsVisible="false"
+             Title="Character Select">
     <ContentPage.Resources>
         <DataTemplate x:Key="CharacterCardView" x:DataType="model:Character">
             <Grid Padding="10">
