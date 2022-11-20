@@ -4,7 +4,7 @@ namespace ES4_LVL_MVVM.MVVM.View;
 
 public partial class CharacterSelectionPage : ContentPage
 {
-	public CharacterSelectionPage(CharacterPageViewModel viewModel)
+	public CharacterSelectionPage(CharacterSelectionPageViewModel viewModel)
     {
         BindingContext = viewModel;
         InitializeComponent();
@@ -12,6 +12,7 @@ public partial class CharacterSelectionPage : ContentPage
 
     public CharacterSelectionPage()
     {
+        BindingContext = App.CharacterSelectionPageView;
         InitializeComponent();
     }
 

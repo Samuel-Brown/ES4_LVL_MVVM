@@ -10,9 +10,9 @@
         <DataTemplate x:Key="CharacterCardView" x:DataType="model:Character">
             <Grid Padding="10">
                 <Frame>
-                    <Frame.GestureRecognizers>
+                    <!--<Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ShellPageViewModel}}, Path=NavigateToShellPageCommand}" CommandParameter="{Binding .}"/>
-                    </Frame.GestureRecognizers>
+                    </Frame.GestureRecognizers>-->
                     <Grid Padding="0" ColumnDefinitions="125,*">
                         <Image Aspect="AspectFill" HeightRequest="125" Source="{Binding Race.Image}" WidthRequest="125" />
                         <VerticalStackLayout Grid.Column="1" Padding="10">

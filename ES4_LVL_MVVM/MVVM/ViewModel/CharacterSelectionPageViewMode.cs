@@ -12,17 +12,17 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         readonly INavigationService _navigationService;
         readonly IDataService _dataService;
 
-        private Character _myCharacter;
+        private Character[] _myCharacters;
 
-        public Character MyCharacter
+        public Character[] MyCharacters
         {
-            get => _myCharacter;
+            get => _myCharacters;
             set
             {
-                if (value != _myCharacter)
+                if (value != _myCharacters)
                 {
-                    _myCharacter = value;
-                    RaisePropertyChanged(property: nameof(MyCharacter));
+                    _myCharacters = value;
+                    RaisePropertyChanged(property: nameof(MyCharacters));
                 }
             }
         }
@@ -32,7 +32,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             _dataService = dataService;
             _navigationService = navigationService;
 
-            _myCharacter = _dataService.GetCharacters()[0];
+            _myCharacters = _dataService.GetCharacters();
     }
 
 
