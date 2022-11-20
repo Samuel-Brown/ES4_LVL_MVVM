@@ -130,18 +130,11 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
 
 
-        public LevelUpPageViewModel(INavigationService navigationService, IDataService dataService)
+        public LevelUpPageViewModel( IDataService dataService , INavigationService navigationService)
         {
             _dataService = dataService;
             _navigationService = navigationService;
 
-            //StrengthIncrease =      Levels.Strength_Increases(Character.CharacterLevels[Character.CharacterLevels.Length-1]);
-            //IntelligenceIncrease =  Levels.Intelligence_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            //WillpowerIncrease =     Levels.Willpower_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            //AgilityIncrease =       Levels.Agility_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            //EnduranceIncrease =     Levels.Endurance_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            //PersonalityIncrease =   Levels.Personality_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
-            //LuckIncrease =          Levels.Luck_Increases(Character.CharacterLevels[Character.CharacterLevels.Length - 1]);
 
         }
 

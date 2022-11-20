@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using ES4_LVL_MVVM.MVVM.Model;
+using ES4_LVL_MVVM.MVVM.View;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -13,6 +14,8 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         readonly IDataService _dataService;
 
         private Character[] _myCharacters;
+
+        
 
         public Character[] MyCharacters
         {
@@ -33,7 +36,26 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             _navigationService = navigationService;
 
             _myCharacters = _dataService.GetCharacters();
-    }
+        }
+
+
+        public Task SelectedCharacterChanged()
+        {
+            _dataService.SetCharacterIndex(2);
+            return null;
+        }
+
+
+
+        public Task SelectedCharacterChangedCommand(object e, EventArgs args) => SelectedCharacterChanged();
+
+
+
+
+
+
+
+
 
 
 

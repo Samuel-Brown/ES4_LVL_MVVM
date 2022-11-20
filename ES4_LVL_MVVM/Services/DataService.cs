@@ -28,6 +28,16 @@ namespace ES4_LVL_MVVM.Services
         }
 
 
+
+        public void SetCharacterIndex(int i)
+        {
+            CharacterIndex = i;
+        }
+
+
+
+
+
         public Character[] GetCharacters()
         {
             return _characterArray;
