@@ -40,6 +40,9 @@ public static class MauiProgram
         builder.Services.AddTransient<ShellPage>();
         builder.Services.AddTransient<ShellPageViewModel>();
 
+        builder.Services.AddTransient<MainPage>();
+        builder.Services.AddTransient<MainPageViewModel>();
+
         builder.Services.AddSingleton<IDataService, DataService>();
         builder.Services.AddSingleton<INavigationService, NavigationService>();
 

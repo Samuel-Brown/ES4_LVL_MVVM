@@ -98,6 +98,9 @@
 	  <MauiXaml Update="MVVM\View\CharacterSelectionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\ShellPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

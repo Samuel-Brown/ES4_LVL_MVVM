@@ -7,32 +7,33 @@ using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
-    public class CharacterSelectionPageViewModel : ViewModelBase
+    public class MainPageViewModel : ViewModelBase
     {
         readonly INavigationService _navigationService;
         readonly IDataService _dataService;
 
-        private Character _myCharacter;
+        private Character _character;
 
-        public Character MyCharacter
+        public Character Character
         {
-            get => _myCharacter;
+            get => _character;
             set
             {
-                if (value != _myCharacter)
+                if (value != _character)
                 {
-                    _myCharacter = value;
-                    RaisePropertyChanged(property: nameof(MyCharacter));
+                    _character = value;
+                    RaisePropertyChanged(property: nameof(Character));
                 }
             }
         }
 
-        public CharacterSelectionPageViewModel(IDataService dataService, INavigationService navigationService)
+
+        public MainPageViewModel(IDataService dataService, INavigationService navigationService)
         {
             _dataService = dataService;
             _navigationService = navigationService;
-
-            _myCharacter = _dataService.GetCharacters()[0];
+            
+            //_character = _dataService.GetCharacters()[0];
     }
 
 
@@ -46,7 +47,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         public override Task OnNavigatingTo(object parameter)
         {
             Console.WriteLine($"On navigating to Character with parameter {parameter}");
-            //Character = (Character)parameter;
             return base.OnNavigatingTo(parameter);
         }
 

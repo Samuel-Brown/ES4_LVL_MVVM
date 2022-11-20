@@ -1,11 +1,9 @@
-﻿//using AndroidX.Annotations;
-using ES4_LVL_MVVM.Contracts.Services;
+﻿using ES4_LVL_MVVM.Contracts.Services;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using ES4_LVL_MVVM.MVVM.Model;
-using __XamlGeneratedCode__;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -63,23 +61,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             _navigationService = navigationService;
             Characters = dataService.GetCharacters();
         }
-
-
-
-        async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Character animal = e.CurrentSelection.FirstOrDefault() as Character;
-            var navigationParameter = new Dictionary<string, object>
-            {
-        { "Bear", animal }
-            };
-            await Shell.Current.GoToAsync($"LevelUpPage", navigationParameter);
-        }
-
-
-
-
-
 
 
         public override Task OnNavigatedFrom(bool isForwardNavigation)

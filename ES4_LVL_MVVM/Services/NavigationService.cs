@@ -34,6 +34,8 @@ namespace ES4_LVL_MVVM.Services
 
         //-----------------------------------------------------NavigateTo Commands------------------
 
+        public Task NavigateToMainPage()
+            => NavigateToPage<MainPage>();
 
         public Task NavigateToNewCharacterPage()
             => NavigateToPage<NewCharacterPage>();

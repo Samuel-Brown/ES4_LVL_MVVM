@@ -4,7 +4,11 @@ namespace ES4_LVL_MVVM.MVVM.View;
 
 public partial class ShellPage : Shell
 {
-	public ShellPage(CharacterPageViewModel viewModel)
+    public ShellPage()
+    {
+    }
+
+    public ShellPage(CharacterPageViewModel viewModel)
     {
         BindingContext = viewModel;
         InitializeComponent();
