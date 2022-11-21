@@ -49,7 +49,7 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             _dataService = dataService;
             _navigationService = navigationService;
             
-            //_character = _dataService.GetCharacters()[0];
+            _character = _dataService.GetCurrentCharacter();
     }
 
 

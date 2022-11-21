@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ES4_LVL_MVVM.MVVM.View.MainPage"
              xmlns:local="clr-namespace:ES4_LVL_MVVM.MVVM.View"
-             Title="MainPage">
+             Title="{Binding Character.Name}">
     <local:CharacterSelectionPage/>
     <local:CharacterPage/>
     <local:AttributesPage/>

@@ -14,8 +14,23 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         readonly IDataService _dataService;
 
         private Character[] _myCharacters;
+        private Character _selectedCharacter;
 
-        
+
+        public Character SelectedCharacter
+        {
+            get => _selectedCharacter;
+            set
+            {
+                if (value != _selectedCharacter)
+                {
+                    _selectedCharacter = value;
+                    RaisePropertyChanged(property: nameof(SelectedCharacter));
+                }
+            }
+        }
+
+
 
         public Character[] MyCharacters
         {
@@ -39,20 +54,43 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         }
 
 
-        public Task SelectedCharacterChanged()
+        //public Task SelectedCharacterChanged()
+        //{
+        //    _dataService.SetCharacterIndex(2);
+
+        //    _dataService.SetCurrentCharacter(SelectedCharacter);
+
+        //    return null;
+        //}
+
+
+
+        //public Task SelectedCharacterChangedCommand(object e, EventArgs args) => SelectedCharacterChanged();
+
+
+
+
+        ////This works fine (so why do I bother with mvvm?)
+        //public void OnSelectionChanged(Object sender, SelectionChangedEventArgs e)
+        //{
+        //    Console.WriteLine("Selection changed click");
+        //    Character c = e.CurrentSelection[0] as Character;
+        //    Console.WriteLine(c.Name);
+        //}
+
+
+
+
+
+
+        //Can't get this to work, though it will register the click
+        public ICommand SelectionChangedCommand => new Command(SelectionChangedControl);
+        public void SelectionChangedControl()
         {
-            _dataService.SetCharacterIndex(2);
-            return null;
+            Console.WriteLine("selection made");
+            _dataService.SetCurrentCharacter(SelectedCharacter);
+
         }
-
-
-
-        public Task SelectedCharacterChangedCommand(object e, EventArgs args) => SelectedCharacterChanged();
-
-
-
-
-
 
 
 

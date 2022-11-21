@@ -9,14 +9,16 @@ namespace ES4_LVL_MVVM.Services
 
         private Character[] _characterArray;
         private int _characterIndex;
+        private Character _selectedCharacter;
 
         public Character[] MyCharacters { get { return _characterArray; } set { _characterArray = value; } }
-        public int CharacterIndex { get { return _characterIndex; } set { _characterIndex = value; } }  
+        public int CharacterIndex { get { return _characterIndex; } set { _characterIndex = value; } }
+        public Character SelectedCharacter { get { return _selectedCharacter; } set { _selectedCharacter = value; } }
 
         public DataService()
         {
             //Character TempLoadCharacter = new Character("Bob", new Race(true, Races.Argonian), "Test", new Birthsign(Birthsigns.Atronach), new GameClass(Character_CLasses.Scout));
-            _characterIndex = -1;
+            _characterIndex = 0;
 
             _characterArray = new Character[] { 
                 new Character("Bob", new Race(true, Races.Argonian), "Magic", new Birthsign(Birthsigns.Atronach), new GameClass(Character_CLasses.Scout)),
@@ -36,15 +38,24 @@ namespace ES4_LVL_MVVM.Services
 
 
 
-
+        public void SetCurrentCharacter(Character c)
+        {
+            SelectedCharacter = c;
+        }
 
         public Character[] GetCharacters()
         {
             return _characterArray;
         }
 
+        public Character GetCurrentCharacter()
+        {
+            return _characterArray[_characterIndex];
+        }
+
         public Character GetCharacter(int i)
         {
+            CharacterIndex = i;
             return _characterArray[i];
         }
 

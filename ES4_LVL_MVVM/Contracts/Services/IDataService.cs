@@ -9,6 +9,8 @@ namespace ES4_LVL_MVVM.Contracts.Services
         public Character[] GetCharacters();
         public void SetCharacterIndex(int i);
 
+        public void SetCurrentCharacter(Character c);
+        public Character GetCurrentCharacter();
     }
 }
 
