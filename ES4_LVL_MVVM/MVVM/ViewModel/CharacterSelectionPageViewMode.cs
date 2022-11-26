@@ -54,16 +54,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         }
 
 
-        //public Task SelectedCharacterChanged()
-        //{
-        //    _dataService.SetCharacterIndex(2);
-
-        //    _dataService.SetCurrentCharacter(SelectedCharacter);
-
-        //    return null;
-        //}
-
-
 
         //public Task SelectedCharacterChangedCommand(object e, EventArgs args) => SelectedCharacterChanged();
 

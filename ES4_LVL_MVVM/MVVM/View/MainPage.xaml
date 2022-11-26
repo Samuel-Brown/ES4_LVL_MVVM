@@ -4,9 +4,37 @@
              x:Class="ES4_LVL_MVVM.MVVM.View.MainPage"
              xmlns:local="clr-namespace:ES4_LVL_MVVM.MVVM.View"
              Title="{Binding Character.Name}">
-    <local:CharacterSelectionPage/>
-    <local:CharacterPage/>
-    <local:AttributesPage/>
-    <local:LevelUpPage/>
-    <local:SkillsPage/>
+    <NavigationPage Title="Characters" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:CharacterSelectionPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="{Binding Character.Name}" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:CharacterPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Attributes" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:AttributesPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Skills" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:SkillsPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Level Up" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:LevelUpPage />
+        </x:Arguments>
+    </NavigationPage>
 </TabbedPage>
+
+
+
+<!--<local:CharacterSelectionPage />
+<local:CharacterPage/>
+<local:AttributesPage/>
+<local:LevelUpPage/>
+<local:SkillsPage/>-->

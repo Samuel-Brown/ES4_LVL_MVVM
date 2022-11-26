@@ -15,6 +15,8 @@ namespace ES4_LVL_MVVM.Services
         public int CharacterIndex { get { return _characterIndex; } set { _characterIndex = value; } }
         public Character SelectedCharacter { get { return _selectedCharacter; } set { _selectedCharacter = value; } }
 
+
+
         public DataService()
         {
             //Character TempLoadCharacter = new Character("Bob", new Race(true, Races.Argonian), "Test", new Birthsign(Birthsigns.Atronach), new GameClass(Character_CLasses.Scout));
