@@ -14,6 +14,9 @@ public partial class App : Application
     public static SkillsPageViewModel SkillsPageView;
     public static AttributesPageViewModel AttributesPageView;
 
+    public static IDataService DataService { get; set; }
+    
+
 
     public App(INavigationService navigationService , IDataService dataService)
     {
@@ -28,7 +31,7 @@ public partial class App : Application
         SkillsPageView = new SkillsPageViewModel(dataService, navigationService);
         AttributesPageView = new AttributesPageViewModel(dataService, navigationService);
 
-
+        DataService = dataService;
 
 
 

@@ -17,12 +17,12 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         public Character Character
         {
-            get => _character;
+            get => App.DataService.GetCurrentCharacter();
             set
             {
-                if (value != _character)
+                if (value != App.DataService.GetCurrentCharacter())
                 {
-                    _character = value;
+                    App.DataService.SetCurrentCharacter(value);
                     RaisePropertyChanged(property: nameof(Character));
                 }
             }

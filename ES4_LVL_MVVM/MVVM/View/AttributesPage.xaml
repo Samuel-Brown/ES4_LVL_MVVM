@@ -1,68 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:ES4_LVL_MVVM.MVVM.Model"
              x:Class="ES4_LVL_MVVM.MVVM.View.AttributesPage"
              Shell.NavBarIsVisible="false"
              Title="Attributes">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AttributeView" x:DataType="model:Attribute">
+            <Grid Padding="10">
+                <Frame>
+                    <Grid Padding="0" ColumnDefinitions="125,*">
+                        <Image Aspect="AspectFill" HeightRequest="125" Source="{Binding Image}" WidthRequest="125" />
+                        <VerticalStackLayout Grid.Column="1" Padding="10">
+                            <Label Text="{Binding Display_Name}" />
+                            <Label Text="{Binding Level}" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </DataTemplate>
+    </ContentPage.Resources>
+
     <ScrollView>
-        <VerticalStackLayout Margin="0">
-            <Label Text="Attributes" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Strength" VerticalOptions="Center" Margin="0,0,0,0"/>
-                <Label Text="{Binding Character.Strength}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Intelligence" VerticalOptions="Center" Margin="0,0,0,0"/>
-                <Label Text="{Binding Character.Intelligence}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Willpower" VerticalOptions="Center" Margin="0,0,0,0"/>
-                <Label Text="{Binding Character.Willpower}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Agility" VerticalOptions="Center" Margin="0,0,0,0"/>
-                <Label Text="{Binding Character.Agility}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Speed" VerticalOptions="Center" Margin="0,0,0,0"/>
-                <Label Text="{Binding Character.Speed}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Endurance" VerticalOptions="Center" Margin="20,0,0,0"/>
-                <Label Text="{Binding Character.Endurance}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-        <Frame>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                <Label Text="Personality" VerticalOptions="Center" Margin="0,0,0,0"/>
-                <Label Text="{Binding Character.Personality}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
-        </Frame>
-            <Frame>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                    <Label Text="Luck" VerticalOptions="Center" Margin="0,0,0,0"/>
-                    <Label Text="{Binding Character.Luck}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </Frame>
-        </VerticalStackLayout>
+        <StackLayout>
+
+            <CollectionView ItemsSource="{Binding Character.Char_Attributes}" ItemTemplate="{StaticResource AttributeView}"></CollectionView>
+
+        </StackLayout>
+        
     </ScrollView>
 </ContentPage>

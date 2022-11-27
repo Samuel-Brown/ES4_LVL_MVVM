@@ -19,12 +19,12 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         public Character Character
         {
-            get => _dataService.GetCurrentCharacter();
+            get => App.DataService.GetCurrentCharacter();
             set
             {
-                if (value != _character)
+                if (value != App.DataService.GetCurrentCharacter())
                 {
-                    _character = value;
+                    App.DataService.SetCurrentCharacter(value);
                     RaisePropertyChanged(property: nameof(Character));
                 }
             }
@@ -49,9 +49,11 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             _dataService = dataService;
             _navigationService = navigationService;
 
-            _dataService.SetCharacterIndex(2);
             _character = _dataService.GetCurrentCharacter();
             _characterList = _dataService.GetCharacters();
+
+            
+
         }
 
         public override Task OnNavigatedFrom(bool isForwardNavigation)

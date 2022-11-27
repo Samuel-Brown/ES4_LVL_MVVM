@@ -16,21 +16,18 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         private Character[] _myCharacters;
         private Character _selectedCharacter;
 
-
         public Character SelectedCharacter
         {
-            get => _selectedCharacter;
+            get => App.DataService.GetCurrentCharacter();
             set
             {
-                if (value != _selectedCharacter)
+                if (value != App.DataService.GetCurrentCharacter())
                 {
-                    _selectedCharacter = value;
+                    App.DataService.SetCurrentCharacter(value);
                     RaisePropertyChanged(property: nameof(SelectedCharacter));
                 }
             }
         }
-
-
 
         public Character[] MyCharacters
         {
@@ -54,37 +51,14 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         }
 
 
-
-        //public Task SelectedCharacterChangedCommand(object e, EventArgs args) => SelectedCharacterChanged();
-
-
-
-
-        ////This works fine (so why do I bother with mvvm?)
-        //public void OnSelectionChanged(Object sender, SelectionChangedEventArgs e)
-        //{
-        //    Console.WriteLine("Selection changed click");
-        //    Character c = e.CurrentSelection[0] as Character;
-        //    Console.WriteLine(c.Name);
-        //}
-
-
-
-
-
-
         //Can't get this to work, though it will register the click
         public ICommand SelectionChangedCommand => new Command(SelectionChangedControl);
         public void SelectionChangedControl()
         {
             Console.WriteLine("selection made");
-            _dataService.SetCurrentCharacter(SelectedCharacter);
-
+            App.DataService.SetCurrentCharacter(SelectedCharacter);
+            //App.
         }
-
-
-
-
 
 
         public override Task OnNavigatedFrom(bool isForwardNavigation)
