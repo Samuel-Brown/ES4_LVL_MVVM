@@ -27,7 +27,7 @@
     <ScrollView>
         <StackLayout>
 
-            <CollectionView ItemsSource="{Binding MyCharacters}" ItemTemplate="{StaticResource CharacterCardView}" SelectionMode="Single"  SelectionChangedCommand="{Binding SelectionChangedCommand}" SelectedItem="{Binding SelectedCharacter}"></CollectionView>
+            <CollectionView ItemsSource="{Binding MyCharacters}" ItemTemplate="{StaticResource CharacterCardView}" SelectionMode="Single"  SelectionChangedCommand="{Binding MyCommand}" SelectionChangedCommandParameter="{Binding SelectedCharacter}" SelectedItem="{Binding SelectedCharacter}"></CollectionView>
 
         </StackLayout>
 

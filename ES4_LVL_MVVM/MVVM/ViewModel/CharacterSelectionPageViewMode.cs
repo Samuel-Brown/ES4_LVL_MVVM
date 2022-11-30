@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using ES4_LVL_MVVM.MVVM.Model;
 using ES4_LVL_MVVM.MVVM.View;
+using ES4_LVL_MVVM.Data;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -18,12 +19,14 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         public Character SelectedCharacter
         {
-            get => App.DataService.GetCurrentCharacter();
+            get => DataManager.Instance.SelectedCharacter;
             set
             {
-                if (value != App.DataService.GetCurrentCharacter())
+                if (value != DataManager.Instance.SelectedCharacter)
                 {
-                    App.DataService.SetCurrentCharacter(value);
+                    DataManager.Instance.SelectedCharacter = value;
+                    //_selectedCharacter = value;
+                    
                     RaisePropertyChanged(property: nameof(SelectedCharacter));
                 }
             }
@@ -42,22 +45,34 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             }
         }
 
+
         public CharacterSelectionPageViewModel(IDataService dataService, INavigationService navigationService)
         {
+
+
+
             _dataService = dataService;
             _navigationService = navigationService;
 
             _myCharacters = _dataService.GetCharacters();
+
+
+
+
+
+            var Form1 = DataManager.Instance.Forms1;
+
         }
 
 
-        //Can't get this to work, though it will register the click
-        public ICommand SelectionChangedCommand => new Command(SelectionChangedControl);
-        public void SelectionChangedControl()
+
+
+        public ICommand MyCommand => new Command(SelectionChangedControl);
+
+        private static void SelectionChangedControl(object obj)
         {
-            Console.WriteLine("selection made");
-            App.DataService.SetCurrentCharacter(SelectedCharacter);
-            //App.
+
+            //throw new NotImplementedException();
         }
 
 

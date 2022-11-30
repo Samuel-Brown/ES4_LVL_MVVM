@@ -2,13 +2,36 @@
 <TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ES4_LVL_MVVM.MVVM.View.MainPage"
+             xmlns:model="clr-namespace:ES4_LVL_MVVM.MVVM.Model"
              xmlns:local="clr-namespace:ES4_LVL_MVVM.MVVM.View"
              Title="{Binding Character.Name}">
-    <NavigationPage Title="Characters" IconImageSource="schedule.png" >
+    <ContentPage Title="Test" IconImageSource="monkeyicon.png">
+        <ContentPage.Resources>
+            <DataTemplate x:Key="CharacterCardView" x:DataType="model:Character">
+                <Grid Padding="10">
+                    <Frame>
+                        <Grid Padding="0" ColumnDefinitions="125,*">
+                            <Image Aspect="AspectFill" HeightRequest="125" Source="{Binding Race.Image}" WidthRequest="125" />
+                            <VerticalStackLayout Grid.Column="1" Padding="10">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding GameClass.Display_Name}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+        </ContentPage.Resources>
+        <ScrollView>
+            <StackLayout>
+                <CollectionView ItemsSource="{Binding CharacterList}" ItemTemplate="{StaticResource CharacterCardView}" SelectionMode="Single"  SelectionChangedCommand="{Binding MyCommand}" SelectionChangedCommandParameter="{Binding Character}" SelectedItem="{Binding Character}"></CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+    <!--<NavigationPage Title="Characters" IconImageSource="schedule.png" >
         <x:Arguments>
             <local:CharacterSelectionPage />
         </x:Arguments>
-    </NavigationPage>
+    </NavigationPage>-->
     <NavigationPage Title="{Binding Character.Name}" IconImageSource="schedule.png" >
         <x:Arguments>
             <local:CharacterPage />
@@ -29,12 +52,5 @@
             <local:LevelUpPage />
         </x:Arguments>
     </NavigationPage>
+    
 </TabbedPage>
-
-
-
-<!--<local:CharacterSelectionPage />
-<local:CharacterPage/>
-<local:AttributesPage/>
-<local:LevelUpPage/>
-<local:SkillsPage/>-->

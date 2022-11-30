@@ -5,11 +5,11 @@
        x:Class="ES4_LVL_MVVM.MVVM.View.ShellPage"
        Shell.NavBarIsVisible="true"
        Title="Hello World">
-    <TabBar>
-        <!--<Tab Title="CharacterSelection"
+    <!--<TabBar>
+        --><!--<Tab Title="CharacterSelection"
             Icon="nord.png">
             <ShellContent x:Name="CharacterSelection" ContentTemplate="{DataTemplate local:CharacterSelectionPage}" />
-        </Tab>-->
+        </Tab>--><!--
         <Tab Title="Character"
             Icon="nord.png">
             <ShellContent x:Name="Character" ContentTemplate="{DataTemplate local:CharacterPage}" />
@@ -26,5 +26,17 @@
             Icon="nord.png">
             <ShellContent x:Name="LevelUp" Route="LevelUpPage" ContentTemplate="{DataTemplate local:LevelUpPage}" />
         </Tab>
-    </TabBar>
+    </TabBar>-->
+    <FlyoutItem Title="Cats"
+                Icon="cat.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:CharacterPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Dogs"
+                Icon="dog.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:SkillsPage}" />
+        </Tab>
+    </FlyoutItem>
 </Shell>

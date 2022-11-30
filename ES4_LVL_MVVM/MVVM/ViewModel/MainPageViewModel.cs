@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using ES4_LVL_MVVM.MVVM.Model;
+using ES4_LVL_MVVM.MVVM.View;
+using ES4_LVL_MVVM.Data;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -14,8 +16,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         private Character _character;
         private Character[] _characterList;
-
-
 
         public Character Character
         {
@@ -29,7 +29,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
                 }
             }
         }
-
 
         public Character[] CharacterList
         {
@@ -51,10 +50,38 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
             _character = _dataService.GetCurrentCharacter();
             _characterList = _dataService.GetCharacters();
+            //_character = _characterList[0];//Will need to change this down the line
 
-            
+
+
+
+
+
+
+
+            DataManager.Instance.Forms1 = new Dictionary<string, string>();
+            DataManager.Instance.Forms1.Add("xxx", "xxx");
+
+
+
+            var Form1 = DataManager.Instance.Forms1;
+
+
+
+
+
 
         }
+
+
+
+
+        //Receiver
+
+        //MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
+        // do something whenever the "Hi" message is sent
+        //});
+
 
         public override Task OnNavigatedFrom(bool isForwardNavigation)
         {
@@ -76,4 +103,5 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
 
     }
+
 }
