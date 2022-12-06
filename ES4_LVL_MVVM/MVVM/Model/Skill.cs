@@ -53,6 +53,8 @@ namespace ES4_LVL_MVVM.MVVM.Model
         public bool Is_Major { get { return _is_major; } set { _is_major = value; } }
         public string Associated_Attribute { get { return _associated_attribute; } set { _associated_attribute = value; } }
 
+        public int CurrentLevel { get { return _levels.LastOrDefault(); } }
+
         public Skill(Skills name, int[] levels, bool is_major)
         {
             Name = name;

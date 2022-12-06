@@ -14,7 +14,7 @@
                         <Image Aspect="AspectFill" HeightRequest="125" Source="{Binding Image}" WidthRequest="125" />
                         <VerticalStackLayout Grid.Column="1" Padding="10">
                             <Label Text="{Binding Display_Name}" />
-                            <Label Text="{Binding Level}" />
+                            <Label Text="{Binding CurrentLevel}" />
                         </VerticalStackLayout>
                     </Grid>
                 </Frame>

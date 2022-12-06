@@ -6,14 +6,14 @@
              Shell.NavBarIsVisible="false"
              Title="Skills">
     <ContentPage.Resources>
-        <DataTemplate x:Key="SkillsView" x:DataType="model:Attribute">
+        <DataTemplate x:Key="SkillsView" x:DataType="model:Skill">
             <Grid Padding="10">
                 <Frame>
                     <Grid Padding="0" ColumnDefinitions="125,*">
                         <Image Aspect="AspectFill" HeightRequest="200" Source="{Binding Image}" WidthRequest="150" />
                         <VerticalStackLayout Grid.Column="1" Padding="10">
                             <Label Text="{Binding Display_Name}" />
-                            <Label Text="{Binding Level}" />
+                            <Label Text="{Binding CurrentLevel}" />
                         </VerticalStackLayout>
                     </Grid>
                 </Frame>

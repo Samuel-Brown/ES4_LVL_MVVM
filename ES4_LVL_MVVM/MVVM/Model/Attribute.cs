@@ -26,19 +26,19 @@ namespace ES4_LVL_MVVM.MVVM.Model
     {
         private Attributes _name;
         private string _display_name;
-        private int[] _level;
+        private int[] _levels;
         private string _image;
 
         public Attributes Name { get { return _name; } set { _name = value; } }
         public string Display_Name { get { return _display_name; } set { _display_name = value; } }
-        public int[] Level { get { return _level; } set { _level = value; } }
+        public int[] Levels { get { return _levels; } set { _levels = value; } }
         public string Image { get { return _image; } set { _image = value; } }
 
-
-        public Attribute(Attributes name, int[] level)
+        public int CurrentLevel { get { return _levels.LastOrDefault(); } }
+        public Attribute(Attributes name, int[] levels)
         {
             Name = name;
-            Level = level;
+            Levels = levels;
 
             switch (name)
             {

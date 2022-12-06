@@ -32,7 +32,7 @@
             <local:CharacterSelectionPage />
         </x:Arguments>
     </NavigationPage>-->
-    <NavigationPage Title="{Binding Character.Name}" IconImageSource="schedule.png" >
+    <NavigationPage Title="Character" IconImageSource="schedule.png" >
         <x:Arguments>
             <local:CharacterPage />
         </x:Arguments>
