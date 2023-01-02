@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ES4_LVL_MVVM.MVVM.View.SkillsPage">
-    <ScrollView>
-        <VerticalStackLayout>
-        <Label Text="Attributes" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-
-        <!--<CollectionView ItemsSource="{Binding Character}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Label Text="{Binding Armorer}" FontAttributes="Bold" />
-                        <Label Grid.Column="1" Text="{Binding CharacterLevels}" />
-                        <Label Grid.Column="2" Text="{Binding Armorer_Is_Major}" HorizontalTextAlignment="End" />
+             xmlns:model="clr-namespace:ES4_LVL_MVVM.MVVM.Model"
+             x:Class="ES4_LVL_MVVM.MVVM.View.SkillsPage"
+             Shell.NavBarIsVisible="false"
+             Title="Skills">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="SkillsView" x:DataType="model:Skill">
+            <Grid Padding="10">
+                <Frame>
+                    <Grid Padding="0" ColumnDefinitions="125,*">
+                        <Image Aspect="AspectFill" HeightRequest="200" Source="{Binding Image}" WidthRequest="150" />
+                        <VerticalStackLayout Grid.Column="1" Padding="10">
+                            <Label Text="{Binding Display_Name}" />
+                            <Label Text="{Binding CurrentLevel}" />
+                        </VerticalStackLayout>
                     </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>-->
+                </Frame>
+            </Grid>
+        </DataTemplate>
+    </ContentPage.Resources>
 
-        <Frame>
+    <ScrollView>
+        <StackLayout>
+
+            <CollectionView ItemsSource="{Binding Character.Char_Skills}" ItemTemplate="{StaticResource SkillsView}"></CollectionView>
+
+        </StackLayout>
+
+    </ScrollView>
+
+
+
+
+    <!--<ScrollView>
+        <VerticalStackLayout>
+            <Label Text="Attributes" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            <Frame>
             <StackLayout Orientation="Horizontal">
                 <Image Source="blade.gif" HeightRequest="50" Margin="0" />
                 <Label Text="Armorer" VerticalOptions="Center" Margin="20,0,0,0"/>
@@ -43,5 +61,5 @@
 
 
     </VerticalStackLayout>
-        </ScrollView>
+        </ScrollView>-->
 </ContentPage>

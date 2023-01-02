@@ -1,4 +1,4 @@
-﻿using ES4_LVL_F;
+﻿using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.Contracts.Services
 {
@@ -12,8 +12,8 @@ namespace ES4_LVL_MVVM.Contracts.Services
         Task NavigateToSkillsPage();
         Task NavigateToLevelUpPage();
         Task NavigateToShellPage();
-        Task NavigateToShellPage(Character myCharacter);
         Task NavigateToCharacterPage(Character myCharacter);
         Task NavigateToLevelUpPage(Character myCharacter);
+        Task NavigateToCharacterSelectionPage();
     }
 }

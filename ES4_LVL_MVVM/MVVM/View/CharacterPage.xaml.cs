@@ -10,8 +10,9 @@ public partial class CharacterPage : ContentPage
         InitializeComponent();
     }
 
-    private void TabbedPage_Appearing(object sender, EventArgs e)
+    public CharacterPage()
     {
-
+        InitializeComponent();
     }
+
 }

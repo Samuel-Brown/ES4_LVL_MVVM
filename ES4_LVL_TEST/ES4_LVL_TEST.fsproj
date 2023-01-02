@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="ModelTests.fs" />
     <Compile Include="NewCharacterTest.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
@@ -26,7 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ES4_LVL_F\ES4_LVL_F.fsproj" />
+    <!--<ProjectReference Include="..\ES4_LVL_F\ES4_LVL_F.fsproj" />-->
+    <ProjectReference Include="..\ES4_LVL_MVVM\ES4_LVL_MVVM.csproj" />
   </ItemGroup>
 
 </Project>

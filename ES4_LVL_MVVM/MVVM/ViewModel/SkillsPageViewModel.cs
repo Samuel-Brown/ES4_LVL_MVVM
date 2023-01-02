@@ -1,5 +1,5 @@
 ﻿//using AndroidX.Annotations;
-using ES4_LVL_F;
+using ES4_LVL_MVVM.MVVM.Model;
 using ES4_LVL_MVVM.Contracts.Services;
 using System;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
-    public class AttributesPageViewModel : ViewModelBase
+    public class SkillsPageViewModel : ViewModelBase
     {
         readonly INavigationService _navigationService;
         readonly IDataService _dataService;
@@ -17,29 +17,21 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         public Character Character
         {
-            get => _character;
+            get => App.DataService.GetCurrentCharacter();
             set
             {
-                if (value != _character)
+                if (value != App.DataService.GetCurrentCharacter())
                 {
-                    _character = value;
+                    App.DataService.SetCurrentCharacter(value);
                     RaisePropertyChanged(property: nameof(Character));
                 }
             }
         }
 
-
-
-
-
-
-
-
-        public AttributesPageViewModel(IDataService dataService, INavigationService navigationService)
+        public SkillsPageViewModel(IDataService dataService, INavigationService navigationService)
         {
             _dataService = dataService;
             _navigationService = navigationService;
-            Character = _dataService.GetCharacters()[0];
         }
 
 

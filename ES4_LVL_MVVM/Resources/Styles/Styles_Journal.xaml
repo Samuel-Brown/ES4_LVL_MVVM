@@ -124,7 +124,7 @@
         <Setter Property="HasShadow" Value="False" />
         <Setter Property="BackgroundColor" Value="{StaticResource Paper}" />
         <Setter Property="BorderColor" Value="{StaticResource Brass}" />
-        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="CornerRadius" Value="5" />
     </Style>
 
     <Style TargetType="ImageButton">
@@ -165,8 +165,9 @@
     </Style>
 
     <Style TargetType="ListView">
-        <Setter Property="SeparatorColor" Value="{StaticResource Brass}" />
-        <Setter Property="RefreshControlColor" Value="{StaticResource HardPencil}" />
+        <Setter Property="SeparatorColor" Value="{StaticResource Pen}" />
+        <Setter Property="RefreshControlColor" Value="{StaticResource Selected}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Brass}" />
     </Style>
 
     <Style TargetType="Picker">
@@ -275,7 +276,7 @@
     <Style TargetType="Shadow">
         <Setter Property="Radius" Value="15" />
         <Setter Property="Opacity" Value="0.5" />
-        <Setter Property="Brush" Value="{StaticResource Paper}" />
+        <Setter Property="Brush" Value="{StaticResource Brass}" />
         <Setter Property="Offset" Value="10,10" />
     </Style>
 
@@ -332,56 +333,24 @@
         </Setter>
     </Style>
 
-    <Style TargetType="TimePicker">
-        <Setter Property="TextColor" Value="{StaticResource HardPencil}" />
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="FontFamily" Value="OpenSansRegular"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                            <Setter Property="TextColor" Value="{StaticResource Wood}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
-    </Style>
-
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
         <Setter Property="BackgroundColor" Value="{StaticResource Paper}" />
     </Style>
 
     <Style TargetType="Shell" ApplyToDerivedTypes="True">
-        <Setter Property="Shell.BackgroundColor" Value="{StaticResource Pencil}" />
-        <Setter Property="Shell.ForegroundColor" Value="{StaticResource Pencil}" />
+        <Setter Property="Shell.BackgroundColor" Value="{StaticResource Pen}" />
+        <Setter Property="Shell.ForegroundColor" Value="{StaticResource Pen}" />
         <Setter Property="Shell.TitleColor" Value="{StaticResource Selected}" />
         <Setter Property="Shell.DisabledColor" Value="{StaticResource Selected}" />
         <Setter Property="Shell.UnselectedColor" Value="{StaticResource Selected}" />
         <Setter Property="Shell.NavBarHasShadow" Value="False" />
+        <Setter Property="Shell.NavBarIsVisible" Value="False" />
         <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Brass}" />
         <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource Selected}" />
-        <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Pencil}" />
         <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource HardPencil}" />
         <Setter Property="Shell.TabBarDisabledColor" Value="{StaticResource HardPencil}" />
         <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource Selected}" />
-    </Style>
-
-    <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{StaticResource Pencil}" />
-        <Setter Property="BarTextColor" Value="{StaticResource Brass}" />
-        <Setter Property="IconColor" Value="{StaticResource Brass}" />
-    </Style>
-
-    <Style TargetType="TabbedPage">
-        <Setter Property="BarBackgroundColor" Value="{StaticResource Paper}" />
-        <Setter Property="BarTextColor" Value="{StaticResource Pencil}" />
-        <Setter Property="UnselectedTabColor" Value="{StaticResource Brass}" />
-        <Setter Property="SelectedTabColor" Value="{StaticResource Selected}" />
     </Style>
 
 </ResourceDictionary>

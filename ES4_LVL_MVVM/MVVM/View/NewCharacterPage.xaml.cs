@@ -9,4 +9,10 @@ public partial class NewCharacterPage : ContentPage
         BindingContext = viewModel;
         InitializeComponent();
 	}
+
+	public NewCharacterPage()
+	{
+        InitializeComponent();
+    }
+
 }

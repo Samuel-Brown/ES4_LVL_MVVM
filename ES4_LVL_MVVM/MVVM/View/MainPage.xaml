@@ -1,38 +1,56 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ES4_LVL_MVVM.MVVM.View.MainPage">
-
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30"
-            VerticalOptions="Start">
-
-            <Frame>
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer 
-                                            Command="{Binding NavigateToShellPageCommand}"
-                                            CommandParameter="{Binding MyCharacters[0]}"/>
-                </Frame.GestureRecognizers>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="strength.gif" HeightRequest="50" Margin="0" />
-                    <Label Text="{Binding MyCharacters[0].Name}" VerticalOptions="Center" Margin="20,0,0,0"/>
-                    <Label Text="{Binding MyCharacters[0].ClassName}" VerticalOptions="Center" Margin="20,0,0,0"/>
-                    <Label Text="{Binding MyCharacters[0].Race}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </Frame>
-
-
-            <Button 
-                Text="New Character"
-                IsEnabled="False"
-                FontAttributes="Bold"
-                Grid.Row="3"
-                Command="{Binding NavigateToNewCharacterPageCommand}"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
-
-</ContentPage>
+             x:Class="ES4_LVL_MVVM.MVVM.View.MainPage"
+             xmlns:model="clr-namespace:ES4_LVL_MVVM.MVVM.Model"
+             xmlns:local="clr-namespace:ES4_LVL_MVVM.MVVM.View"
+             Title="{Binding Character.Name}">
+    <ContentPage Title="Test" IconImageSource="monkeyicon.png">
+        <ContentPage.Resources>
+            <DataTemplate x:Key="CharacterCardView" x:DataType="model:Character">
+                <Grid Padding="10">
+                    <Frame>
+                        <Grid Padding="0" ColumnDefinitions="125,*">
+                            <Image Aspect="AspectFill" HeightRequest="125" Source="{Binding Race.Image}" WidthRequest="125" />
+                            <VerticalStackLayout Grid.Column="1" Padding="10">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding GameClass.Display_Name}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+        </ContentPage.Resources>
+        <ScrollView>
+            <StackLayout>
+                <CollectionView ItemsSource="{Binding CharacterList}" ItemTemplate="{StaticResource CharacterCardView}" SelectionMode="Single"  SelectionChangedCommand="{Binding MyCommand}" SelectionChangedCommandParameter="{Binding Character}" SelectedItem="{Binding Character}"></CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+    <!--<NavigationPage Title="Characters" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:CharacterSelectionPage />
+        </x:Arguments>
+    </NavigationPage>-->
+    <NavigationPage Title="Character" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:CharacterPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Attributes" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:AttributesPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Skills" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:SkillsPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Level Up" IconImageSource="schedule.png" >
+        <x:Arguments>
+            <local:LevelUpPage />
+        </x:Arguments>
+    </NavigationPage>
+    
+</TabbedPage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:ES4_LVL_MVVM.MVVM.Model"
+             xmlns:viewmodel="clr-namespace:ES4_LVL_MVVM.MVVM.ViewModels"
+             x:Class="ES4_LVL_MVVM.MVVM.View.CharacterSelectionPage"
+             Shell.NavBarIsVisible="false"
+             Title="Character Select">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="CharacterCardView" x:DataType="model:Character">
+            <Grid Padding="10">
+                <Frame>
+                    <!--<Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ShellPageViewModel}}, Path=NavigateToShellPageCommand}" CommandParameter="{Binding .}"/>
+                    </Frame.GestureRecognizers>-->
+                    <Grid Padding="0" ColumnDefinitions="125,*">
+                        <Image Aspect="AspectFill" HeightRequest="125" Source="{Binding Race.Image}" WidthRequest="125" />
+                        <VerticalStackLayout Grid.Column="1" Padding="10">
+                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding GameClass.Display_Name}" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </DataTemplate>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout>
+
+            <CollectionView ItemsSource="{Binding MyCharacters}" ItemTemplate="{StaticResource CharacterCardView}" SelectionMode="Single"  SelectionChangedCommand="{Binding MyCommand}" SelectionChangedCommandParameter="{Binding SelectedCharacter}" SelectedItem="{Binding SelectedCharacter}"></CollectionView>
+
+        </StackLayout>
+
+
+    </ScrollView>
+
+</ContentPage>
+
+<!--SelectionChanged="{Binding SelectionChangedCommand}"-->

@@ -1,4 +1,4 @@
-﻿using ES4_LVL_F;
+﻿using ES4_LVL_MVVM.MVVM.Model;
 using ES4_LVL_MVVM.Contracts.Services;
 using ES4_LVL_MVVM.MVVM.View;
 using ES4_LVL_MVVM.MVVM.ViewModels;
@@ -34,8 +34,6 @@ namespace ES4_LVL_MVVM.Services
 
         //-----------------------------------------------------NavigateTo Commands------------------
 
-
-
         public Task NavigateToMainPage()
             => NavigateToPage<MainPage>();
 
@@ -46,7 +44,6 @@ namespace ES4_LVL_MVVM.Services
             => NavigateToPage<CharacterPage>();
         public Task NavigateToCharacterPage(Character character)
             => NavigateToPage<CharacterPage>(character);
-
 
         public Task NavigateToAttributesPage()
             => NavigateToPage<AttributesPage>();
@@ -59,11 +56,16 @@ namespace ES4_LVL_MVVM.Services
 
         public Task NavigateToLevelUpPage(Character character)
             => NavigateToPage<LevelUpPage>(character);
+
         public Task NavigateToShellPage()
             => NavigateToPage<ShellPage>();
 
-        public Task NavigateToShellPage(Character character)
-            => NavigateToPage<ShellPage>(character);
+        public Task NavigateToCharacterSelectionPage()
+            => NavigateToPage<CharacterSelectionPage>();
+
+
+
+
 
 
         public Task NavigateBack()
@@ -99,6 +101,39 @@ namespace ES4_LVL_MVVM.Services
             else
                 throw new InvalidOperationException($"Unable to resolve type {typeof(T).FullName}");
         }
+
+
+        private async Task NavigateToPage<T>(Character parameter) where T : Page
+        {
+            var toPage = ResolvePage<T>();
+
+            if (toPage is not null)
+            {
+                //Subscribe to the toPage's NavigatedTo event
+                toPage.NavigatedTo += Page_NavigatedTo;
+
+                //Get VM of the toPage
+                var toViewModel = GetPageViewModelBase(toPage);
+
+                //Call navigatingTo on VM, passing in the paramter
+                if (toViewModel is not null)
+                    await toViewModel.OnNavigatingTo(parameter);
+
+                //Navigate to requested page
+                await Navigation.PushAsync(toPage, true);
+
+                //Subscribe to the toPage's NavigatedFrom event
+                toPage.NavigatedFrom += Page_NavigatedFrom;
+            }
+            else
+                throw new InvalidOperationException($"Unable to resolve type {typeof(T).FullName}");
+        }
+
+
+
+
+
+
 
         private async void Page_NavigatedFrom(object sender, NavigatedFromEventArgs e)
         {
@@ -145,5 +180,6 @@ namespace ES4_LVL_MVVM.Services
 
         private T ResolvePage<T>() where T : Page
             => _services.GetService<T>();
+
     }
 }

@@ -1,31 +1,51 @@
-﻿using ES4_LVL_F;
-using ES4_LVL_MVVM.Contracts.Services;
+﻿using ES4_LVL_MVVM.Contracts.Services;
 using System.Collections.ObjectModel;
+using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.Services
 {
     public class DataService : IDataService
     {
 
-        public ObservableCollection<Character> MyCharacters { get; } = new();
+        private Character[] _characterArray;
+        private Character _selectedCharacter;
+
+        public Character[] MyCharacters { get { return _characterArray; } set { _characterArray = value; } }
+        public Character SelectedCharacter { get { return _selectedCharacter; } set { _selectedCharacter = value; } }
 
 
-        public ObservableCollection<Character> GetCharacters()
-        {
-            return MyCharacters;
-        }
 
         public DataService()
         {
+            //Character TempLoadCharacter = new Character("Bob", new Race(true, Races.Argonian), "Test", new Birthsign(Birthsigns.Atronach), new GameClass(Character_CLasses.Scout));
 
-            Level TestLevel1 = ES4_LVL_F.Levels.New_Level(0, 5, 4, 0, 4, 0, 0, 10, 0, 1, 4, 0, 1, 0, 5, 0, 0, 0, 3, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0);
-            Level[] TestLevels = new Level[] { TestLevel1 };
-            Character MyCharacter = Characters.New_Character("Frederick", Race.Imperial, Gender.M, Specialization.Combat, Birthsign.Serpent, Class.Acrobat, TestLevels);
+            _characterArray = new Character[] { 
+                new Character("Bob", new Race(true, Races.Argonian), "Magic", new Birthsign(Birthsigns.Atronach), new GameClass(Character_CLasses.Scout)),
+                new Character("Harry", new Race(true, Races.Dunmer), "Combat", new Birthsign(Birthsigns.Lover), new GameClass(Character_CLasses.Barbarian)),
+                new Character("Rupert", new Race(true, Races.Breton), "Stealth", new Birthsign(Birthsigns.Thief), new GameClass(Character_CLasses.Agent)),
+                new Character("Philip", new Race(true, Races.Nord), "Combat", new Birthsign(Birthsigns.Lord), new GameClass(Character_CLasses.Warrior)),
+                new Character("Dog", new Race(true, Races.Khajiit), "Magic", new Birthsign(Birthsigns.Lady), new GameClass(Character_CLasses.Mage))
+            };
 
-            MyCharacters.Add(MyCharacter);
-
-            GetCharacters();
+            _selectedCharacter = _characterArray[0];
         }
+
+
+        public void SetCurrentCharacter(Character c)
+        {
+            SelectedCharacter = c;
+        }
+
+        public Character[] GetCharacters()
+        {
+            return _characterArray;
+        }
+
+        public Character GetCurrentCharacter()
+        {
+            return _selectedCharacter;
+        }
+
 
     }
 }

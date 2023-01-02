@@ -9,4 +9,9 @@ public partial class SkillsPage : ContentPage
         BindingContext = viewModel;
         InitializeComponent();
     }
+
+    public SkillsPage()
+    {
+        InitializeComponent();
+    }
 }

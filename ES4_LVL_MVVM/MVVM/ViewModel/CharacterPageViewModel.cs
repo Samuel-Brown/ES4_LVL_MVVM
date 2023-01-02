@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using ES4_LVL_F;
+using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -16,12 +16,12 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
         public Character Character
         {
-            get => _character;
+            get => App.DataService.GetCurrentCharacter();
             set
             {
-                if (value != _character)
+                if (value != App.DataService.GetCurrentCharacter())
                 {
-                    _character = value;
+                    App.DataService.SetCurrentCharacter(value);
                     RaisePropertyChanged(property: nameof(Character));
                 }
             }
@@ -48,8 +48,9 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         {
             _dataService = dataService;
             _navigationService = navigationService;
-            Character = _dataService.GetCharacters()[0];
-        }
+            
+            _character = _dataService.GetCurrentCharacter();
+    }
 
 
 

@@ -1,10 +1,9 @@
-﻿//using AndroidX.Annotations;
-using ES4_LVL_MVVM.Contracts.Services;
+﻿using ES4_LVL_MVVM.Contracts.Services;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using ES4_LVL_F;
+using ES4_LVL_MVVM.MVVM.Model;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -14,7 +13,23 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         readonly IDataService _dataService;
 
 
+
         private Character _character;
+        private Character[] _characters;
+
+        public Character[] Characters
+        {
+            get => _characters;
+            set
+            {
+                if (value != _characters)
+                {
+                    _characters = value;
+                    RaisePropertyChanged(property: nameof(Characters));
+                }
+            }
+        }
+
 
         public Character Character
         {
@@ -30,15 +45,22 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         }
 
 
+
+
+
+
+
+
+
+
+
+
         public ShellPageViewModel(IDataService dataService, INavigationService navigationService)
         {
             _dataService = dataService;
             _navigationService = navigationService;
-            Character = _dataService.GetCharacters()[0];
+            Characters = dataService.GetCharacters();
         }
-
-
-
 
 
         public override Task OnNavigatedFrom(bool isForwardNavigation)
@@ -50,7 +72,6 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
         public override Task OnNavigatingTo(object parameter)
         {
             Console.WriteLine($"On navigating to MainPage with parameter {parameter}");
-            Character = (Character)parameter;
             return base.OnNavigatingTo(parameter);
         }
 
