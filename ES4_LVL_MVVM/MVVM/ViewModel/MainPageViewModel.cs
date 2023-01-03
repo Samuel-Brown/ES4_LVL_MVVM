@@ -6,6 +6,7 @@ using System.Windows.Input;
 using ES4_LVL_MVVM.MVVM.Model;
 using ES4_LVL_MVVM.MVVM.View;
 using ES4_LVL_MVVM.Data;
+using System.Data.Common;
 
 namespace ES4_LVL_MVVM.MVVM.ViewModels
 {
@@ -43,6 +44,14 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// The UI can bind to this command and use it to get to the ResultsPage
+        /// </summary>
+        public ICommand NavigateToNewCharacterPageCommand { get; }
+
+
+
         public MainPageViewModel(IDataService dataService, INavigationService navigationService)
         {
             _dataService = dataService;
@@ -68,10 +77,13 @@ namespace ES4_LVL_MVVM.MVVM.ViewModels
 
 
 
-
+           
 
 
         }
+
+
+
 
 
 
