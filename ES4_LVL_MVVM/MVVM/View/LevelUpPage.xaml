@@ -10,9 +10,9 @@
         <DataTemplate x:Key="LevelUpView" x:DataType="model:Attribute">
             <Grid Padding="10">
                 <Frame>
-                    <Grid Padding="0" ColumnDefinitions="125,*">
-                        <Image Aspect="AspectFill" HeightRequest="125" Source="{Binding Image}" WidthRequest="125" />
-                        <VerticalStackLayout Grid.Column="1" Padding="10">
+                    <Grid Padding="0" ColumnDefinitions="50,*">
+                        <Image Aspect="AspectFill" HeightRequest="50" Source="{Binding Image}" WidthRequest="50" />
+                        <VerticalStackLayout Grid.Column="1" Padding="5">
                             <Label Text="{Binding Display_Name}" />
                             <Label Text="{Binding CurrentLevel}" />
                         </VerticalStackLayout>
